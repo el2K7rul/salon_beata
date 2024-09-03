@@ -1,0 +1,225 @@
+@use "../utilities/colors" as c;
+
+// nav__mobile
+
+@media (width < 768px) {
+  .nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: c.$white-light;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: transform 0.6s;
+    overflow: hidden;
+    z-index: 1;
+
+    &__mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+
+      &-item {
+        position: relative;
+        list-style-type: none;
+        font-size: 2.5rem;
+        padding: 1rem 2rem;
+        margin-bottom: 1rem;
+
+        a {
+          color: c.$black-basic;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .active {
+    transform: translateX(0);
+  }
+
+  .nav__mobile-item {
+    ::before,
+    ::after {
+      position: absolute;
+      content: "";
+      width: 0.8rem;
+      height: 0.8rem;
+      transition: 0.3s;
+      border-radius: 20%;
+    }
+
+    ::before {
+      top: -2px;
+      left: -8px;
+      border-top: 0px solid c.$gold-light;
+      border-left: 0px solid c.$gold-light;
+    }
+    ::after {
+      bottom: -2px;
+      right: -8px;
+      border-bottom: 0px solid c.$gold-light;
+      border-right: 0px solid c.$gold-light;
+    }
+
+    :hover::before,
+    :hover::after {
+      width: 20px;
+      height: 50%;
+    }
+  }
+
+  .nav__mobile-item :hover::before {
+    border-top: 3px solid c.$gold-light;
+    border-left: 3px solid c.$gold-light;
+  }
+  .nav__mobile-item :hover::after {
+    border-bottom: 3px solid c.$gold-light;
+    border-right: 3px solid c.$gold-light;
+  }
+
+  .nav-header {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    //   max-width: 1200px;
+    position: sticky;
+    width: 100%;
+    height: 13rem;
+    top: 0;
+    //   background: transparent;
+    right: 0;
+    z-index: 10;
+    .logo-img {
+      // position: fixed;
+      height: 10rem;
+      width: 10rem;
+      margin-right: 4rem;
+      // z-index: -10;
+    }
+  }
+  .burger-box {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    //   background: transparent;
+    right: 0;
+    z-index: 10;
+
+    .burger {
+      border: none;
+      margin-bottom: 2rem;
+      background: transparent;
+      height: 5rem;
+      width: 5rem;
+      margin: 2rem;
+      position: relative;
+      cursor: pointer;
+
+      &__btn {
+        height: 5px;
+        width: 100%;
+        background-color: c.$black-basic;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transition: background-color 0.3s, transform 0.3s ease;
+        transform: translate(-50%, -50%);
+      }
+      &__btn-one {
+        top: 25%;
+      }
+      &__btn-two {
+        top: 50%;
+      }
+      &__btn-three {
+        top: 75%;
+      }
+    }
+  }
+
+  .burger.active .burger__btn-one {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: c.$gold-dark;
+  }
+  .burger.active .burger__btn-two {
+    opacity: 0;
+  }
+  .burger.active .burger__btn-three {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    background-color: c.$gold-dark;
+  }
+}
+
+// nav__desktop
+
+@media (768px < width) {
+  .burger-box {
+    display: none;
+  }
+
+  .nav-header {
+    // display: flex;
+    position: absolute;
+    justify-content: flex-start;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    z-index: 1;
+
+    .logo-img {
+      width: 10rem;
+      margin-left: 6rem;
+    }
+  }
+  .nav {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10rem;
+    // background-color: yellow;
+    &__desktop {
+      display: flex;
+      //   background-color: #777;
+      height: 100%;
+    }
+    &__desktop-item {
+      text-align: center;
+      width: 10rem;
+      height: 100%;
+      list-style-type: none;
+    }
+
+    &__desktop-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: c.$black-basic;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      padding: 5rem;
+      overflow: hidden;
+      background-color: c.$white-light;
+      font-size: 2rem;
+      z-index: 1;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    &__desktop-link:hover {
+      background-color: c.$gold-dark;
+      color: c.$white-light;
+    }
+  }
+}
