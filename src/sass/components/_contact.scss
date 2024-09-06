@@ -1,0 +1,127 @@
+@use "../utilities/colors" as c;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5rem;
+
+    &--heading {
+      font-size: 6rem;
+      letter-spacing: 1.3rem;
+      padding-bottom: 2rem;
+      font-family: "Oswald", sans-serif;
+    }
+    &--heading::first-letter {
+      color: c.$gold-dark;
+    }
+    &--subheading {
+      font-size: 2.5rem;
+    }
+  }
+  &__info,
+  &__tel,
+  &__mail,
+  &__adress,
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  &__tel-link {
+    color: black;
+    text-decoration: none;
+  }
+  &__mail-link {
+    color: black;
+    text-decoration: none;
+  }
+  &__socials-link {
+    font-size: 5rem;
+    color: black;
+    padding-bottom: 2rem;
+
+    transition: color 0.6s;
+  }
+  &__socials-link:hover {
+    color: c.$gold-dark;
+  }
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 6rem;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    color: rgba(134, 134, 134, 0.566);
+  }
+
+  &__input {
+    border: none;
+    padding: 0.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    border-bottom: 1px solid #000;
+  }
+
+  &__msg {
+    border: none;
+    resize: vertical;
+    padding: 1rem;
+    min-height: 20rem;
+    scrollbar-width: 2rem;
+    border-radius: 0.4rem;
+    box-shadow: 1px 1px 3px;
+  }
+
+  &__btn {
+    width: 15rem;
+    padding: 0.9rem 2rem;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px;
+    border: 2px solid;
+    background: transparent;
+    transition: color 0.3s, background-color 0.3s, border 0.3s, font-weight 0.3s;
+  }
+
+  &__btn:hover {
+    // color: c.$white-light;
+    font-weight: bold;
+    background-color: c.$gold-dark;
+    border-color: transparent;
+  }
+}
+
+.button-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 0;
+}
+
+@media (width < 576px) {
+  .button-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

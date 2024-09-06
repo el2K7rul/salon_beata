@@ -1,0 +1,96 @@
+@use "../utilities/colors" as c;
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border-top: 1px solid black;
+  background-color: rgb(255, 254, 249);
+  background-color: rgb(255, 254, 249);
+  padding-top: 2rem;
+  width: 100%;
+  height: 55vh;
+  font-size: 1rem;
+
+  &__bottom {
+    grid-row: 3 / 4;
+    grid-column: 3 / 11;
+    padding-top: 1rem;
+    border-top: 1px solid c.$gold-dark;
+    text-align: center;
+  }
+
+  .adress {
+    grid-column: 3 /7;
+    padding-bottom: 1rem;
+    // border: 2px solid red;
+  }
+  .hours {
+    grid-column: 8 /12;
+  }
+  .contact {
+    grid-row: 2 / 3;
+    grid-column: 3 / 6;
+    padding-bottom: 2rem;
+    &__link {
+      text-decoration: none;
+      color: black;
+      transition: color 0.6s;
+    }
+    &__link:hover {
+      color: c.$gold-dark;
+    }
+    &__tel-link,
+    &__mail-link {
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      transition: color 0.3s;
+    }
+    &__tel-link:hover,
+    &__mail-link:hover {
+      color: c.$gold-dark;
+    }
+  }
+
+  .media {
+    grid-row: 2 / 3;
+    grid-column: 8 / 9;
+    text-align: center;
+    font-size: 4rem;
+    i {
+      padding: 0;
+      color: black;
+      transition: color 0.6s;
+    }
+    i:hover {
+      color: c.$gold-dark;
+    }
+  }
+
+  .adress,
+  .hours,
+  .contact,
+  .media {
+    &__heading {
+      font-size: 2rem;
+      letter-spacing: 0.6rem;
+      padding-bottom: 1rem;
+      font-family: "Oswald", sans-serif;
+    }
+  }
+}
+
+@media (width < 576px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    .xs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

@@ -17,16 +17,47 @@
     rel="stylesheet"
   />
   <link href="dist/hamburgers.css" rel="stylesheet" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link rel="stylesheet" type="text/css" href="./dist/css/main.min.css" />
   <title>Salon Beata</title>
 </head>
 
 
   <body>
-    <div class="nav-header">
-  <a href="#home" class="logo-link"
-    ><img class="logo-img" src="../dist/img/logo.jpg" alt="logo salonu Beata"
-  /></a>
+    <div class="nav-header-mobile">
+  <div class="book">
+    <button class="book__btn">
+      <a href="#" class="book__btn--link"> Rezerwuj </a>
+    </button>
+  </div>
+  <div class="logo">
+    <a href="index.html" class="logo__link"
+      ><img class="logo__img" src="../dist/img/logo.jpg" alt="logo salonu Beata"
+    /></a>
+  </div>
+
   <div class="burger-box">
     <button class="burger">
       <!-- <span class="rectangle box"></span> -->
@@ -37,96 +68,129 @@
   </div>
 </div>
 <nav class="nav">
+  <div class="nav__desktop-logo">
+    <a href="index.html" class="nav__desktop-logo--link"
+      ><img class="nav__desktop-logo--img" src="../dist/img/logo.jpg" alt="logo salonu Beata"
+    /></a>
+  </div>
+
   <ul class="nav__mobile nav__desktop">
     <li class="nav__mobile-item nav__desktop-item">
-      <a class="nav__mobile-link nav__desktop-link" href="#home">Salon</a>
+      <a class="nav__mobile-link nav__desktop-link" href="#salon">Salon</a>
     </li>
     <li class="nav__mobile-item nav__desktop-item">
-      <a class="nav__mobile-link nav__desktop-link" href="#home">Oferta</a>
+      <a class="nav__mobile-link nav__desktop-link" href="#offer">Oferta</a>
     </li>
     <li class="nav__mobile-item nav__desktop-item">
       <a class="nav__mobile-link nav__desktop-link" href="#home">Cennik</a>
     </li>
     <li class="nav__mobile-item nav__desktop-item">
-      <a class="nav__mobile-link nav__desktop-link" href="#home">Kontakt</a>
+      <a class="nav__mobile-link nav__desktop-link" href="contact.html">Kontakt</a>
     </li>
   </ul>
+  <div class="desktop-book">
+    <button class="book__btn">
+      <a href="#" class="book__btn--link"> Rezerwuj </a>
+    </button>
+  </div>
 </nav>
 
-    <!-- <header class="carousel">
-  <ol class="carousel__viewport">
-    <div class="carousel__text">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa natus voluptatum ex esse
-        nostrum quisquam voluptatibus illum. Facilis optio nemo nam repudiandae, natus corrupti
-        omnis atque voluptate delectus ea voluptatum recusandae sed quis eligendi molestiae eum
-        vitae. Fugiat magnam laborum, officiis deserunt fuga perspiciatis! Accusamus, autem!
-        Mollitia enim corrupti asperiores?
-      </p>
-    </div>
-    <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-      <div class="carousel__snapper">
-        <a href="#carousel__slide2" class="carousel__prev">Go to the last slide</a>
-        <a href="#carousel__slide2" class="carousel__next">Go to the next slide</a>
-      </div>
-    </li>
-    <li id="carousel__slide2" tabindex="1" class="carousel__slide">
-      <div class="carousel__snapper">
-        <a href="#carousel__slide1" class="carousel__prev">Go to the last slide</a>
-        <a href="#carousel__slide1" class="carousel__next">Go to the next slide</a>
-      </div>
-    </li>
-  </ol>
-  <aside class="carousel__nav">
-    <ol class="carousel__nav-list">
-      <li class="carousel__nav-item">
-        <a href="#carousel__slide1" class="carousel__nav-button">Go to slide 1</a>
-      </li>
-      <li class="carousel__nav-item">
-        <a href="#carousel__slide2" class="carousel__nav-button">Go to slide 2</a>
-      </li>
-    </ol>
-  </aside>
-</header> -->
-<header class="header">
-  <div class="carousel">
-    <div id="one" class="carousel__item">
-      <div
-        class="slide-image"
-        style="
-          background-image: url('https://cdn.pixabay.com/photo/2016/02/04/17/13/razor-1179458_1280.jpg');
-        "
-      ></div>
-    </div>
-    <div id="two" class="carousel__item">
-      <div
-        class="slide-image"
-        style="
-          background-image: url('https://cdn.pixabay.com/photo/2020/08/08/15/05/hair-5473204_1280.jpg');
-        "
-      ></div>
-    </div>
-    <div id="three" class="carousel__item">
-      <div
-        class="slide-image"
-        style="
-          background-image: url('https://cdn.pixabay.com/photo/2015/03/04/17/21/hairdresser-659139_960_720.jpg');
-        "
-      ></div>
-    </div>
+    <header class="header">
+  <div class="intro__text">
+    <h1 class="intro__text--heading"><span class="intro__text--animated">Z</span>apraszam!</h1>
+    <p class="intro__text--content">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem eius voluptates debitis,
+      earum dolore unde exercitationem nihil ex? Sit et consectetur suscipit similique sunt velit
+      nemo ea ducimus distinctio iste sapiente velit.
+    </p>
   </div>
-  <div class="buttons">
-    <a href="#one" class="buttons__link"></a>
-    <a href="#two" class="buttons__link"></a>
-    <a href="#three" class="buttons__link"></a>
+  <div class="intro">
+    <div class="intro__hero">
+      <img class="intro__img" src="../dist/img/hero_foto.jpg" alt="hair saloon" />
+    </div>
   </div>
 </header>
 
-    <div>
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-</div>
-<section id="test">sdsdsds</section>
+    <main class="main">
+  <section id="salon" class="salon">
+    <div class="salon__text">
+      <h1 class="salon__text--heading"><span>W</span>itaj!</h1>
+      <p class="salon__text--content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias temporibus, commodi
+        suscipit cupiditate omnis assumenda accusamus accusantium, culpa quae ut, pariatur ipsa
+        doloribus at repellendus cum dignissimos sit! Nesciunt, aperiam repellendus. Animi ut
+        repellat impedit officiis praesentium explicabo autem quae, aliquam placeat numquam nostrum
+        itaque magni vel, esse odio dolore quis deserunt minus illo. Nesciunt illum expedita quam at
+        cumque.
+      </p>
+    </div>
+    <div class="salon__hero">
+      <img
+        src="../dist/img/beata_small.jpg"
+        alt="picture of a razor and a shaving brush"
+        class="salon__img"
+      />
+    </div>
+  </section>
+  <section id="offer" class="offer">
+    <div class="offer__text">
+      <h1 class="offer__text--heading"><span>W</span> czym mogę Ci pomóc?</h1>
+      <p class="offer__text--content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias temporibus, commodi
+        suscipit cupiditate omnis assumenda accusamus accusantium, culpa quae ut, pariatur ipsa
+        doloribus at repellendus cum dignissimos sit! Nesciunt, aperiam repellendus. Animi ut
+      </p>
+    </div>
+    <div class="offer__hero">
+      <img
+        src="../dist/img/shaver_big.jpg"
+        alt="picture of a razor and a shaving brush"
+        class="offer__img"
+      />
+    </div>
+  </section>
+</main>
 
+    <footer class="footer">
+  <div class="adress xs">
+    <h1 class="adress__heading">Adres</h1>
+    <p class="adress__content">Salon Fryzjerski "Beata"</p>
+    <p class="adress__content">19-100 Mońki</p>
+    <p class="adress__content">ul. Strażacka 1</p>
+  </div>
+  <div class="hours xs">
+    <h1 class="hours__heading">Godziny otwarcia</h1>
+    <p class="hours__content">Pon-Pią: 8:00 - 17:00</p>
+    <p class="hours__content">Sob: 8:00 - 14:00</p>
+  </div>
+  <div class="contact xs">
+    <h1 class="contact__heading">Kontakt</h1>
+
+    <a href="tel:+48501293984" class="contact__tel-link"
+      ><i class="fa-solid fa-envelope"></i> 501-293-984</a
+    >
+    <a href="mailto: beata@salonbeata.pl" class="contact__mail-link"
+      ><i class="fa-solid fa-envelope"></i> beata@salonbeata.pl</a
+    >
+  </div>
+  <div class="media xs">
+    <div class="media__facebook">
+      <h1 class="media__heading">Media</h1>
+      <a href="https://www.facebook.com/beata.nieciecka.9" target="_blank"
+        ><i class="fa-brands fa-facebook"> </i
+      ></a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>&copy <span class="footer__bottom--date"></span> Salon Fryzjerski "Beata"</p>
+  </div>
+</footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <script src="./dist/js/main.min.js"></script>
   </body>
 </html>
