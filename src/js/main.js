@@ -13,14 +13,13 @@ window.onload = function () {
     footerDate.textContent = currentYear.toString();
   };
 
-  handleFooterYear();
-
   burger.addEventListener("click", () => {
     burger.classList.toggle("active");
     navMobile.classList.toggle("active");
   });
-};
 
+  handleFooterYear();
+};
 // let slides = document.getElementsByClassName("carousel__item");
 //   function addActive(slide) {
 //     slide.classList.add("carousel__item--active");

@@ -1,82 +1,140 @@
-@use "../utilities/colors" as c;
-
 .header {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid c.$gold-dark;
-  border-bottom: 1px solid c.$gold-dark;
-  padding-bottom: 5rem;
-  .intro {
+  .rect-main {
     display: flex;
     justify-content: center;
-    &__img {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 50vh;
-    }
-    &__text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      padding: 4rem;
-      padding-bottom: 10rem;
-      &--heading {
-        font-size: 4rem;
-        letter-spacing: 0.6rem;
-        padding-bottom: 2rem;
-        font-family: "Oswald", sans-serif;
-      }
-      &--heading::first-letter {
-        color: c.$gold-dark;
-      }
-    }
-  }
-}
-@media (width >= 1200px) {
-  .intro {
-    display: flex;
-    flex-direction: row-reverse;
-    height: 80vh;
-    padding-left: 7rem;
-    padding-right: 7rem;
-    padding-bottom: 2rem;
-    // background-color: #f8f7e7;
-    &__img {
-      width: 100vw;
-    }
-
-    // &__text {
-    // }
-  }
-}
-
-@media (768px < width < 1200px) {
-  .intro {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-}
-
-@media (431px < width <= 768px) {
-  .intro {
-    flex-direction: column;
     align-items: center;
-    &__hero {
-      max-width: 80vw;
-      height: 50vh;
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+    width: 50rem;
+    height: 30rem;
+    font-family: "Libre Bodoni", serif;
+
+    .rect-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 60%;
+      height: 50%;
+
+      .text,
+      .rect-subheader {
+        animation: vanish 1s 3.25s forwards;
+      }
+      .text {
+        position: absolute;
+        font-size: 10rem;
+        opacity: 0;
+        animation: shownameBig 3s 1s forwards;
+      }
+      .rect-subheader {
+        position: absolute;
+        // top: 5%;
+        left: 33%;
+        width: 20rem;
+        height: 3.5rem;
+        background: transparent;
+        .heading1 {
+          position: absolute;
+          font-size: 2rem;
+          animation: showhead1 1.25s forwards;
+
+          opacity: 0;
+        }
+        .heading2 {
+          position: absolute;
+          font-size: 2rem;
+          animation: showhead2 1.25s 0.5s forwards;
+          opacity: 0;
+        }
+      }
     }
   }
 }
-@media (width <= 430px) {
-  .intro {
-    flex-direction: column;
-    &__hero {
-      max-width: 100vw;
-      height: 100%;
+
+.logo {
+  animation: appear 2s 4s forwards;
+  opacity: 0;
+  &__img {
+    width: 35rem;
+    height: 35rem;
+  }
+}
+
+@keyframes showhead1 {
+  from {
+    bottom: -200%;
+    left: -20%;
+    opacity: 0;
+  }
+  to {
+    bottom: 100%;
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes showhead2 {
+  from {
+    bottom: -300%;
+    right: -30%;
+    opacity: 0;
+  }
+  to {
+    bottom: 100%;
+    right: 25%;
+    opacity: 1;
+  }
+}
+
+@keyframes shownameBig {
+  0% {
+    bottom: -100%;
+    opacity: 0;
+  }
+
+  75% {
+    bottom: 6%;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    bottom: 6%;
+  }
+}
+
+@keyframes vanish {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (width <= 576px) {
+  // .text {
+  //   animation: shownameSmall 3s 1s forwards;
+  // }
+  .logo {
+    &__img {
+      width: 28rem;
+      height: 28rem;
+    }
+  }
+
+  .header {
+    .rect-main {
+      margin-bottom: 0;
+      margin-top: 0;
     }
   }
 }
