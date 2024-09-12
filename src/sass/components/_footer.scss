@@ -80,17 +80,17 @@
   }
 }
 
-@media (width < 576px) {
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+// @media (width < 576px) {
+//   .footer {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 1.5rem;
 
-    .xs {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-}
+//     .xs {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//     }
+//   }
+// }

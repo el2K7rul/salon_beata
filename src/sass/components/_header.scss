@@ -1,10 +1,9 @@
 .header {
   display: flex;
   justify-content: center;
-  // background-color: rgba(0, 0, 0, 1);
   width: 100%;
   height: 100%;
-  // box-shadow: 1px 3px 10px;
+  // background-color: tomato;
 
   .rect-main {
     display: flex;
@@ -13,7 +12,7 @@
     margin-top: 0rem;
     margin-bottom: 2rem;
     width: 50rem;
-    height: 30rem;
+    height: 45rem;
     font-family: "Libre Bodoni", serif;
 
     .rect-header {
@@ -22,7 +21,7 @@
       align-items: center;
       position: relative;
       width: 60%;
-      height: 50%;
+      height: 70%;
 
       .text,
       .rect-subheader {
@@ -100,12 +99,12 @@
   }
 
   75% {
-    bottom: 6%;
+    bottom: 29%;
     opacity: 1;
   }
   100% {
     opacity: 0;
-    bottom: 6%;
+    bottom: 2%;
   }
 }
 
@@ -127,29 +126,29 @@
   }
 }
 
-@media (576px < width) {
-  .header {
-    .rect-main {
-      margin-top: 5rem;
-      margin-bottom: 10rem;
-    }
-  }
-}
-@media (width <= 576px) {
-  // .text {
-  //   animation: shownameSmall 3s 1s forwards;
-  // }
-  .logo {
-    &__img {
-      width: 28rem;
-      height: 28rem;
-    }
-  }
+// @media (576px < width) {
+//   .header {
+//     .rect-main {
+//       margin-top: 5rem;
+//       margin-bottom: 10rem;
+//     }
+//   }
+// }
+// @media (width <= 576px) {
+//   // .text {
+//   //   animation: shownameSmall 3s 1s forwards;
+//   // }
+//   .logo {
+//     &__img {
+//       width: 28rem;
+//       height: 28rem;
+//     }
+//   }
 
-  .header {
-    .rect-main {
-      margin-bottom: 0;
-      margin-top: 0;
-    }
-  }
-}
+//   .header {
+//     .rect-main {
+//       margin-bottom: 0;
+//       margin-top: 0;
+//     }
+//   }
+// }
