@@ -1,9 +1,11 @@
 @use "colors" as c;
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 html {
@@ -12,35 +14,26 @@ html {
 }
 
 body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
   font-size: 1.6rem;
-  // max-width: 1200px;
-  align-items: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Josefine", sans-serif;
   background-color: c.$white-light;
-  // background-color: #777;
+  // background-color: tomato;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 0.8rem;
-}
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 0.8rem;
+// }
 
-// /* Track */
+// // /* Track */
 // ::-webkit-scrollbar-track {
 //   box-shadow: inset 0 0 5px grey;
 //   border-radius: 10px;
 // }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(61, 61, 61, 0.147);
-  border-radius: 0.4rem;
-  cursor: grab;
-}
-
-.disable-scroll {
-  overflow-y: hidden;
-}
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: rgba(61, 61, 61, 0.147);
+//   border-radius: 0.4rem;
+//   cursor: grab;
+// }

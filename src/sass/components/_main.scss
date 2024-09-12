@@ -5,6 +5,17 @@
   flex-direction: column;
   padding-bottom: 5rem;
 
+  .salon {
+    position: relative;
+    // background-color: rgba(226, 226, 226, 0.5);
+    &__shadow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      // background-color: rgba(255, 255, 255, 0.24);
+      z-index: 1;
+    }
+  }
   .salon,
   .offer {
     display: flex;
@@ -41,6 +52,7 @@
     }
   }
 }
+
 @media (width >= 1200px) {
   .salon,
   .offer {
@@ -70,11 +82,19 @@
     flex-direction: column;
     align-items: center;
     &__hero {
-      max-width: 80vw;
-      height: 50vh;
+      max-width: 100vw;
+      // height: 50vh;
+    }
+  }
+  .salon {
+    &__hero {
+      &--shadow {
+        background-color: red($color: #000000);
+      }
     }
   }
 }
+
 @media (width <= 430px) {
   .salon,
   .offer {

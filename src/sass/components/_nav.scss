@@ -1,221 +1,152 @@
 @use "../utilities/colors" as c;
 
-// .nav {
-//   // display: flex;
-//   position: absolute;
-//   top: 0;
-//   z-index: 1;
-//   justify-content: space-around;
-//   align-items: center;
-//   width: 100%;
-//   height: 11rem;
-//   background-color: c.$white-light;
-//   &__desktop {
-//     display: flex;
-//     height: 100%;
-//   }
+.burger {
+  position: fixed;
+  gap: 1rem;
+  top: 2rem;
+  right: 2rem;
+  background-color: transparent;
+  border: none;
+  width: 5rem;
+  height: 5rem;
+  z-index: 1000;
 
-//   &__desktop-item {
-//     text-align: center;
-//     width: 10rem;
+  &:focus {
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+  }
+  &__btn {
+    position: absolute;
+    height: 0.5rem;
+    width: 100%;
+    background-color: rgb(2, 2, 0);
+    border-radius: 25px;
+    top: 50%;
+    left: 50%;
+    transition: background-color 0.3s, transform 0.3s ease;
+    transform: translate(-50%, -50%);
+  }
+  &__btn-one {
+    top: 25%;
+  }
+  &__btn-two {
+    top: 50%;
+  }
+  &__btn-three {
+    top: 75%;
+  }
+}
 
-//     height: 100%;
-//     list-style-type: none;
-//   }
+.burger.active .burger__btn-one {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: c.$gold-dark;
+}
+.burger.active .burger__btn-two {
+  opacity: 0;
+}
+.burger.active .burger__btn-three {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background-color: c.$gold-dark;
+}
 
-//   &__desktop-link {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     color: c.$black-basic;
-//     text-decoration: none;
-//     width: 100%;
-//     height: 100%;
-//     // padding: 5rem;
-//     overflow: hidden;
-//     background-color: c.$white-light;
-//     font-size: 2rem;
-//     z-index: 1;
-//     transition: color 0.3s, background-color 0.3s;
-//   }
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background-color: c.$white-light;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  // overflow: hidden;
 
-//   &__desktop-link:hover {
-//     background-color: c.$gold-dark;
-//     color: c.$white-light;
-//   }
-//   &__desktop-logo {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     height: 100%;
-//     // height: 10rem;
-//     &--img {
-//       height: 10rem;
-//     }
-//   }
-// }
-// .book {
-//   &__btn {
-//     width: 15rem;
-//     padding: 0.9rem 2rem;
-//     border-radius: 5px;
-//     box-shadow: 1px 2px 4px;
-//     border: 2px solid;
-//     background: transparent;
-//     transition: color 0.3s, background-color 0.3s, border 0.3s, font-weight 0.3s,
-//       letter-spacing 0.5s;
-//     &--link {
-//       color: black;
-//       text-decoration: none;
-//     }
-//   }
+  &__link {
+    position: relative;
+    font-size: 3rem;
+    padding: 2rem 3rem;
+    text-decoration: none;
+    color: c.$black-basic;
+    // background-color: tomato;
+  }
 
-//   &__btn:hover {
-//     // color: c.$white-light;
-//     font-weight: bold;
-//     background-color: c.$gold-dark;
-//     border-color: transparent;
-//     letter-spacing: 0.3rem;
-//   }
-// }
+  &__link,
+  &__link::before,
+  &__link::after {
+    transition: 0.3s;
+  }
 
-//nav__mobile
+  &__link::before,
+  &__link::after {
+    content: "";
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 0.6rem;
+  }
 
-@media (width <= 768px) {
-  .nav__desktop-logo,
-  .desktop-book {
+  &__link::before {
+    top: -2px;
+    left: -8px;
+    border-top: 0px solid c.$gold-dark;
+    border-left: 0px solid c.$gold-dark;
+  }
+
+  &__link::after {
+    bottom: -2px;
+    right: -10px;
+    border-bottom: 0px solid c.$gold-dark;
+    border-right: 0px solid c.$gold-dark;
+  }
+
+  &__link:hover::before,
+  &__link:hover::after {
+    width: 5rem;
+    height: 50%;
+  }
+
+  &__link:hover::before {
+    border-top: 2px solid c.$gold-dark;
+    border-left: 2px solid c.$gold-dark;
+  }
+  &__link:hover::after {
+    border-bottom: 2px solid c.$gold-dark;
+    border-right: 2px solid c.$gold-dark;
+  }
+}
+.active {
+  transform: translateX(0);
+}
+
+.nav-mobile {
+  flex-direction: column;
+}
+
+// -------------------------------B I G --------------------------------
+@media (768px < width) {
+  .burger {
     display: none;
   }
-  .nav {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: c.$white-light;
-    transform: translateX(100%);
-    transition: transform 0.6s;
-    z-index: 1;
 
-    &__mobile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100vw;
-      height: 100vh;
-
-      &-item {
-        position: relative;
-        list-style-type: none;
-        font-size: 2.5rem;
-        padding: 1rem 2rem;
-        margin-bottom: 1rem;
-
-        a {
-          color: c.$black-basic;
-          text-decoration: none;
-        }
-      }
-    }
+  .nav-mobile {
+    display: none;
   }
-  .active {
-    transform: translateX(0);
-  }
-
-  .nav__mobile-item {
-    ::before,
-    ::after {
-      position: absolute;
-      content: "";
-      width: 0.8rem;
-      height: 0.8rem;
-      transition: 0.3s;
-      border-radius: 20%;
-    }
-
-    ::before {
-      top: -2px;
-      left: -8px;
-      border-top: 0px solid c.$gold-light;
-      border-left: 0px solid c.$gold-light;
-    }
-    ::after {
-      bottom: -2px;
-      right: -8px;
-      border-bottom: 0px solid c.$gold-light;
-      border-right: 0px solid c.$gold-light;
-    }
-
-    :hover::before,
-    :hover::after {
-      width: 20px;
-      height: 50%;
-    }
-  }
-
-  .nav__mobile-item :hover::before {
-    border-top: 3px solid c.$gold-light;
-    border-left: 3px solid c.$gold-light;
-  }
-  .nav__mobile-item :hover::after {
-    border-bottom: 1px solid c.$gold-light;
-    border-right: 3px solid c.$gold-light;
-  }
-
-  .burger-box {
-    background-color: transparent;
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
+  .nav-desktop {
     position: sticky;
     top: 0;
-    //   background: transparent;
     right: 0;
-    z-index: 10;
-
-    .burger {
-      border: none;
-      margin-bottom: 2rem;
-      background: transparent;
-      height: 5rem;
-      width: 5rem;
-      margin: 2rem;
-      position: relative;
-      cursor: pointer;
-
-      &__btn {
-        height: 5px;
-        width: 100%;
-        background-color: rgb(2, 2, 0);
-        border-radius: 25px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transition: background-color 0.3s, transform 0.3s ease;
-        transform: translate(-50%, -50%);
-      }
-      &__btn-one {
-        top: 25%;
-      }
-      &__btn-two {
-        top: 50%;
-      }
-      &__btn-three {
-        top: 75%;
-      }
-    }
-  }
-
-  .burger.active .burger__btn-one {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    background-color: c.$gold-dark;
-  }
-  .burger.active .burger__btn-two {
-    opacity: 0;
-  }
-  .burger.active .burger__btn-three {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    background-color: c.$gold-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    height: 18rem;
+    background-color: tomato;
   }
 }

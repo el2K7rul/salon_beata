@@ -51,58 +51,34 @@
     href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap"
     rel="stylesheet"
   />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" type="text/css" href="./dist/css/main.min.css" />
   <title>Salon Beata</title>
 </head>
 
 
   <body>
-    <div class="burger-box">
-  <button class="burger">
-    <!-- <span class="rectangle box"></span> -->
-    <span class="burger__btn burger__btn-one"></span>
-    <span class="burger__btn burger__btn-two"></span>
-    <span class="burger__btn burger__btn-three"></span>
-  </button>
-</div>
-<!-- <div class="nav-header-mobile"> -->
-  <!-- <div class="book">
-    <button class="book__btn">
-      <a href="#" class="book__btn--link"> Rezerwuj </a>
-    </button>
-  </div> -->
-  <!-- <div class="logo">
-    <a href="index.html" class="logo__link"
-      ><img class="logo__img" src="../dist/img/logo.jpg" alt="logo salonu Beata"
-    /></a>
-  </div> -->
-</div>
-<nav class="nav">
-  <div class="nav__desktop-logo">
-    <a href="index.html" class="nav__desktop-logo--link"
-      ><img class="nav__desktop-logo--img" src="../dist/img/logo.jpg" alt="logo salonu Beata"
-    /></a>
-  </div>
-
-  <ul class="nav__mobile nav__desktop">
-    <li class="nav__mobile-item nav__desktop-item">
-      <a class="nav__mobile-link nav__desktop-link" href="#salon">Salon</a>
-    </li>
-    <li class="nav__mobile-item nav__desktop-item">
-      <a class="nav__mobile-link nav__desktop-link" href="#offer">Oferta</a>
-    </li>
-    <li class="nav__mobile-item nav__desktop-item">
-      <a class="nav__mobile-link nav__desktop-link" href="#home">Cennik</a>
-    </li>
-    <li class="nav__mobile-item nav__desktop-item">
-      <a class="nav__mobile-link nav__desktop-link" href="contact.html">Kontakt</a>
-    </li>
-  </ul>
-  <div class="desktop-book">
-    <button class="book__btn">
-      <a href="#" class="book__btn--link"> Rezerwuj </a>
-    </button>
-  </div>
+    <button class="burger">
+  <span class="burger__btn burger__btn-one"></span>
+  <span class="burger__btn burger__btn-two"></span>
+  <span class="burger__btn burger__btn-three"></span>
+</button>
+<nav class="nav nav-mobile">
+  <a class="nav-mobile__link nav__link" href="#home">Salon</a>
+  <a class="nav-mobile__link nav__link" href="#offer">Oferta</a>
+  <a class="nav-mobile__link nav__link" href="#contact">Kontakt</a>
+  <a class="nav-mobile__link nav__link" href="#pricing">Cennik</a>
+</nav>
+<nav class="nav nav-desktop">
+  <a class="nav-desktop__link nav__link" href="#home">Salon</a>
+  <a class="nav-desktop__link nav__link" href="#offer">Oferta</a>
+  <a class="nav-desktop__link nav__link" href="#pricing">Cennik</a>
+  <a class="nav-desktop__link nav__link" href="#contact">Kontact</a>
 </nav>
 
     <header class="header">
@@ -133,8 +109,9 @@
       </p>
     </div>
     <div class="salon__hero">
+      <div class="salon__shadow"></div>
       <img
-        src="../dist/img/beata_small.jpg"
+        src="../dist/img/drzwi_html.webp"
         alt="picture of a razor and a shaving brush"
         class="salon__img"
       />
@@ -142,7 +119,7 @@
   </section>
   <section id="offer" class="offer">
     <div class="offer__text">
-      <h1 class="offer__text--heading"><span>W</span> czym mogę Ci pomóc?</h1>
+      <h1 class="offer__text--heading"><span>W</span> czym możemy pomóc?</h1>
       <p class="offer__text--content">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias temporibus, commodi
         suscipit cupiditate omnis assumenda accusamus accusantium, culpa quae ut, pariatur ipsa
@@ -151,9 +128,9 @@
     </div>
     <div class="offer__hero">
       <img
-        src="../dist/img/shaver_big.jpg"
+        src="../dist/img/krzesło klient.jpg"
         alt="picture of a razor and a shaving brush"
-        class="offer__img"
+        class="offer__hero--img"
       />
     </div>
   </section>

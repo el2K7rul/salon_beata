@@ -1,4 +1,11 @@
 .header {
+  display: flex;
+  justify-content: center;
+  // background-color: rgba(0, 0, 0, 1);
+  width: 100%;
+  height: 100%;
+  // box-shadow: 1px 3px 10px;
+
   .rect-main {
     display: flex;
     justify-content: center;
@@ -120,6 +127,14 @@
   }
 }
 
+@media (576px < width) {
+  .header {
+    .rect-main {
+      margin-top: 5rem;
+      margin-bottom: 10rem;
+    }
+  }
+}
 @media (width <= 576px) {
   // .text {
   //   animation: shownameSmall 3s 1s forwards;

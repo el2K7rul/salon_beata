@@ -2,6 +2,7 @@ window.onload = function () {
   //selectors
   const burger = document.querySelector(".burger");
   const navMobile = document.querySelector(".nav");
+  const allNavLinks = document.querySelectorAll(".nav__mobile-link");
   const footerDate = document.querySelector(".footer__bottom--date");
 
   //variables
@@ -13,10 +14,20 @@ window.onload = function () {
     footerDate.textContent = currentYear.toString();
   };
 
-  burger.addEventListener("click", () => {
-    burger.classList.toggle("active");
+  const handleNav = () => {
     navMobile.classList.toggle("active");
-  });
+    burger.classList.toggle("active");
+    allNavLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navMobile.classList.remove("active");
+        burger.classList.remove("active");
+      });
+    });
+  };
+
+  // event listeners
+
+  burger.addEventListener("click", handleNav);
 
   handleFooterYear();
 };
