@@ -176,12 +176,10 @@
       }
     }
 
-    // &__box:hover {
-    //   background-color: #333;
-    //   color: c.$white-light;
-    //   scale: 1.05;
-    //   letter-spacing: 0.05rem;
-    // }
+    &__box:hover {
+      scale: 1.01;
+      letter-spacing: 0.05rem;
+    }
 
     &__list {
       &--item {

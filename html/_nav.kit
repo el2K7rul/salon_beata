@@ -1,13 +1,17 @@
 <button class="burger">
-  <span class="burger__btn burger__btn-one"></span>
-  <span class="burger__btn burger__btn-two"></span>
-  <span class="burger__btn burger__btn-three"></span>
+  <span class="burger__bars burger__bars-one"></span>
+  <span class="burger__bars burger__bars-two"></span>
+  <span class="burger__bars burger__bars-three"></span>
 </button>
 <nav class="nav nav-mobile">
-  <a class="nav-mobile__link nav__link" href="#home">Salon</a>
-  <a class="nav-mobile__link nav__link" href="#offer">Oferta</a>
-  <a class="nav-mobile__link nav__link" href="#pricing">Cennik</a>
-  <a class="nav-mobile__link nav__link" href="#contact">Kontakt</a>
+  <div class="border-container">
+    <a class="nav-mobile__link nav__link" href="#salon">Salon</a>
+    <a class="nav-mobile__link nav__link" href="#offer">Oferta</a>
+    <a class="nav-mobile__link nav__link" href="#price-list">Cennik</a>
+    <a class="nav-mobile__link nav__link" href="../contact.html">Kontakt</a>
+
+    <img src="../dist/img/logo.jpg" alt="hairdresser salon logo" class="border-container__logo" />
+  </div>
 </nav>
 <nav class="nav nav-desktop">
   <div class="nav-desktop__logo">
@@ -18,12 +22,15 @@
     />
   </div>
   <div class="nav-desktop__links">
-    <a class="nav-desktop__links--link nav__link" href="#home">Salon</a>
+    <a class="nav-desktop__links--link nav__link" href="#salon">Salon</a>
     <a class="nav-desktop__links--link nav__link" href="#offer">Oferta</a>
-    <a class="nav-desktop__links--link nav__link" href="#pricing">Cennik</a>
-    <a class="nav-desktop__links--link nav__link" href="#contact">Kontakt</a>
+    <a class="nav-desktop__links--link nav__link" href="#price-list">Cennik</a>
+    <a class="nav-desktop__links--link nav__link" href="../contact.html">Kontakt</a>
   </div>
 
+  <div class="nav-desktop__book">
+    <button class="nav-desktop__book--btn">Zarezerwuj wizytę</button>
+  </div>
   <div class="socials">
     <a href="https://www.facebook.com/beata.nieciecka.9" target="_blank" class="facebook-ico"
       ><i class="fa-brands fa-facebook"> </i

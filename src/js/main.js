@@ -1,8 +1,9 @@
 window.onload = function () {
   //selectors
   const burger = document.querySelector(".burger");
+  const allBurgerBars = document.querySelectorAll(".burger__bars");
   const navMobile = document.querySelector(".nav");
-  const allNavLinks = document.querySelectorAll(".nav__mobile-link");
+  const allNavLinks = document.querySelectorAll(".nav-mobile__link");
   const footerDate = document.querySelector(".footer__bottom--date");
   const priceListBox = document.querySelector(".price-list__box");
   const priceListBoxSubheading = document.querySelector(".price-list__box--subheading");
@@ -10,8 +11,7 @@ window.onload = function () {
   const darkSection = document.querySelector(".dark-section");
   const allSections = document.querySelectorAll(".section");
 
-  console.log(priceListBoxSubheading);
-  console.log(priceListBox);
+  console.log(allBurgerBars);
 
   //variables
   const currentDate = new Date();
@@ -25,6 +25,7 @@ window.onload = function () {
   const handleNav = () => {
     navMobile.classList.toggle("active");
     burger.classList.toggle("active");
+
     allNavLinks.forEach((link) => {
       link.addEventListener("click", () => {
         navMobile.classList.remove("active");
@@ -33,33 +34,26 @@ window.onload = function () {
     });
   };
 
-  // event listeners
+  const handleObserver = () => {
+    const currentSection = window.scrollY;
 
+    allSections.forEach((section) => {
+      if (
+        !section.classList.contains("white-section") &&
+        section.offsetTop <= currentSection + 30
+      ) {
+        allBurgerBars.forEach((bar) => bar.classList.add("white-burger"));
+      } else if (
+        section.classList.contains("white-section") &&
+        section.offsetTop <= currentSection + 30
+      ) {
+        allBurgerBars.forEach((bar) => bar.classList.remove("white-burger"));
+      }
+    });
+  };
+
+  // event listeners
+  window.addEventListener("scroll", handleObserver);
   burger.addEventListener("click", handleNav);
   handleFooterYear();
 };
-// let slides = document.getElementsByClassName("carousel__item");
-//   function addActive(slide) {
-//     slide.classList.add("carousel__item--active");
-//   }
-
-//   function removeActive(slide) {
-//     slide.classList.remove("carousel__item--active");
-//   }
-
-//   addActive(slides[0]);
-//   setInterval(function () {
-//     for (let i = 0; i < slides.length; i++) {
-//       if (i + 1 === slides.length) {
-//         addActive(slides[0]);
-//         setTimeout(removeActive, 5000, slides[i]);
-//         break;
-//       }
-//       if (slides[i].classList.contains("carousel__item--active")) {
-//         setTimeout(removeActive, 5000, slides[i]);
-//         addActive(slides[i + 1]);
-//         break;
-//       }
-//     }
-//   }, 2500);
-// };

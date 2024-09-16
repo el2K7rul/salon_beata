@@ -64,15 +64,19 @@
 
   <body>
     <button class="burger">
-  <span class="burger__btn burger__btn-one"></span>
-  <span class="burger__btn burger__btn-two"></span>
-  <span class="burger__btn burger__btn-three"></span>
+  <span class="burger__bars burger__bars-one"></span>
+  <span class="burger__bars burger__bars-two"></span>
+  <span class="burger__bars burger__bars-three"></span>
 </button>
 <nav class="nav nav-mobile">
-  <a class="nav-mobile__link nav__link" href="#home">Salon</a>
-  <a class="nav-mobile__link nav__link" href="#offer">Oferta</a>
-  <a class="nav-mobile__link nav__link" href="#pricing">Cennik</a>
-  <a class="nav-mobile__link nav__link" href="#contact">Kontakt</a>
+  <div class="border-container">
+    <a class="nav-mobile__link nav__link" href="#salon">Salon</a>
+    <a class="nav-mobile__link nav__link" href="#offer">Oferta</a>
+    <a class="nav-mobile__link nav__link" href="#price-list">Cennik</a>
+    <a class="nav-mobile__link nav__link" href="../contact.html">Kontakt</a>
+
+    <img src="../dist/img/logo.jpg" alt="hairdresser salon logo" class="border-container__logo" />
+  </div>
 </nav>
 <nav class="nav nav-desktop">
   <div class="nav-desktop__logo">
@@ -83,12 +87,15 @@
     />
   </div>
   <div class="nav-desktop__links">
-    <a class="nav-desktop__links--link nav__link" href="#home">Salon</a>
+    <a class="nav-desktop__links--link nav__link" href="#salon">Salon</a>
     <a class="nav-desktop__links--link nav__link" href="#offer">Oferta</a>
-    <a class="nav-desktop__links--link nav__link" href="#pricing">Cennik</a>
-    <a class="nav-desktop__links--link nav__link" href="#contact">Kontakt</a>
+    <a class="nav-desktop__links--link nav__link" href="#price-list">Cennik</a>
+    <a class="nav-desktop__links--link nav__link" href="../contact.html">Kontakt</a>
   </div>
 
+  <div class="nav-desktop__book">
+    <button class="nav-desktop__book--btn">Zarezerwuj wizytę</button>
+  </div>
   <div class="socials">
     <a href="https://www.facebook.com/beata.nieciecka.9" target="_blank" class="facebook-ico"
       ><i class="fa-brands fa-facebook"> </i
@@ -97,7 +104,7 @@
 </nav>
 
     <div class="big-container">
-      <header class="header white-section">
+      <header class="header section white-section">
   <div class="rect-main">
     <div class="rect-header">
       <div class="rect-subheader">
@@ -112,7 +119,7 @@
 </header>
 
       <main class="main">
-  <section id="salon" class="salon section dark-section">
+  <section id="salon" class="salon section">
     <div class="salon__text">
       <h1 class="salon__text--heading"><span>W</span>itaj!</h1>
       <p class="salon__text--content">
@@ -128,7 +135,7 @@
       <img src="../dist/img/recepcja-trimmed2.webp" class="salon__img white-section" />
     </div>
   </section>
-  <section id="offer" class="offer section dark-section">
+  <section class="offer section">
     <div class="offer__text">
       <h1 class="offer__text--heading"><span>W</span> czym możemy pomóc?</h1>
       <p class="offer__text--content">
@@ -137,7 +144,7 @@
         doloribus at repellendus cum dignissimos sit! Nesciunt, aperiam repellendus. Animi ut
       </p>
     </div>
-    <div class="offer__hero section white-section">
+    <div id="#offer" class="offer__hero section">
       <img
         src="../dist/img/podstawowe.jpg"
         alt="photo of a chair in hair salon"
@@ -145,7 +152,7 @@
       />
     </div>
   </section>
-  <section class="offer-cards section dark-section">
+  <section id="offer" class="offer-cards section">
     <div class="offer-cards__text">
       <h1 class="offer-cards__text--heading"><span>S</span>prawdź naszą ofertę.</h1>
       <p class="offer-cards__text--content">
