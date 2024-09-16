@@ -4,11 +4,11 @@
   position: fixed;
   gap: 1rem;
   top: 2rem;
-  right: 2rem;
+  right: 1.25rem;
   background-color: transparent;
   border: none;
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
   z-index: 1000;
 
   &:focus {
@@ -18,10 +18,12 @@
   }
   &__btn {
     position: absolute;
-    height: 0.5rem;
+    height: 0.3rem;
     width: 100%;
     background-color: rgb(2, 2, 0);
+    // background-color: c.$white-light;
     border-radius: 25px;
+    border: none;
     top: 50%;
     left: 50%;
     transition: background-color 0.3s, transform 0.3s ease;
@@ -36,6 +38,10 @@
   &__btn-three {
     top: 75%;
   }
+}
+
+.white-burger {
+  color: c.$white-light;
 }
 
 .burger.active .burger__btn-one {
@@ -146,26 +152,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 20vw;
-    height: 100vh;
+    height: 100%;
     background-color: c.$black-basic;
-    // background-color: transparent;
+
     &__logo {
-      position: absolute;
-      top: 10rem;
       &--img {
-        width: 15rem;
-        height: 15rem;
+        width: 13rem;
+        height: 13rem;
       }
     }
-    &__link {
-      color: c.$white-light;
+    &__links {
+      display: flex;
+      flex-direction: column;
+      &--link {
+        color: c.$white-light;
+        font-size: 2.5rem;
+      }
     }
     .facebook-ico {
       font-size: 3.5rem;
-      position: absolute;
-      bottom: 10%;
       color: c.$white-light;
       transition: color 0.6s;
     }
@@ -188,36 +195,33 @@
     top: 0;
     right: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    flex-direction: row;
     width: 100vw;
     height: 10rem;
     background-color: #333;
     z-index: 10;
 
     &__logo {
-      position: absolute;
-      left: 10%;
-      top: 10%;
-
       &--img {
         width: 8rem;
         height: 8rem;
       }
     }
 
-    &__link {
-      font-size: 1.75rem;
-      color: c.$white-light;
-      padding: 1rem;
-      margin-left: 4rem;
+    &__links {
+      display: flex;
+      flex-direction: row;
+      &--link {
+        font-size: 1.75rem;
+        color: c.$white-light;
+        padding: 1rem;
+        margin-left: 4rem;
+      }
     }
   }
   .facebook-ico {
     font-size: 2rem;
-    position: absolute;
-    right: 10%;
     color: c.$white-light;
     transition: color 0.6s;
   }

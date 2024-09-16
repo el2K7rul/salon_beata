@@ -4,6 +4,14 @@ window.onload = function () {
   const navMobile = document.querySelector(".nav");
   const allNavLinks = document.querySelectorAll(".nav__mobile-link");
   const footerDate = document.querySelector(".footer__bottom--date");
+  const priceListBox = document.querySelector(".price-list__box");
+  const priceListBoxSubheading = document.querySelector(".price-list__box--subheading");
+  const whiteSection = document.querySelector(".white-section");
+  const darkSection = document.querySelector(".dark-section");
+  const allSections = document.querySelectorAll(".section");
+
+  console.log(priceListBoxSubheading);
+  console.log(priceListBox);
 
   //variables
   const currentDate = new Date();
@@ -28,7 +36,6 @@ window.onload = function () {
   // event listeners
 
   burger.addEventListener("click", handleNav);
-
   handleFooterYear();
 };
 // let slides = document.getElementsByClassName("carousel__item");

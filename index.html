@@ -71,8 +71,8 @@
 <nav class="nav nav-mobile">
   <a class="nav-mobile__link nav__link" href="#home">Salon</a>
   <a class="nav-mobile__link nav__link" href="#offer">Oferta</a>
-  <a class="nav-mobile__link nav__link" href="#contact">Kontakt</a>
   <a class="nav-mobile__link nav__link" href="#pricing">Cennik</a>
+  <a class="nav-mobile__link nav__link" href="#contact">Kontakt</a>
 </nav>
 <nav class="nav nav-desktop">
   <div class="nav-desktop__logo">
@@ -82,18 +82,22 @@
       class="nav-desktop__logo--img"
     />
   </div>
-  <a class="nav-desktop__link nav__link" href="#home">Salon</a>
-  <a class="nav-desktop__link nav__link" href="#offer">Oferta</a>
-  <a class="nav-desktop__link nav__link" href="#pricing">Cennik</a>
-  <a class="nav-desktop__link nav__link" href="#contact">Kontakt</a>
+  <div class="nav-desktop__links">
+    <a class="nav-desktop__links--link nav__link" href="#home">Salon</a>
+    <a class="nav-desktop__links--link nav__link" href="#offer">Oferta</a>
+    <a class="nav-desktop__links--link nav__link" href="#pricing">Cennik</a>
+    <a class="nav-desktop__links--link nav__link" href="#contact">Kontakt</a>
+  </div>
 
-  <a href="https://www.facebook.com/beata.nieciecka.9" target="_blank" class="facebook-ico"
-    ><i class="fa-brands fa-facebook"> </i
-  ></a>
+  <div class="socials">
+    <a href="https://www.facebook.com/beata.nieciecka.9" target="_blank" class="facebook-ico"
+      ><i class="fa-brands fa-facebook"> </i
+    ></a>
+  </div>
 </nav>
 
     <div class="big-container">
-      <header class="header">
+      <header class="header white-section">
   <div class="rect-main">
     <div class="rect-header">
       <div class="rect-subheader">
@@ -108,7 +112,7 @@
 </header>
 
       <main class="main">
-  <section id="salon" class="salon">
+  <section id="salon" class="salon section dark-section">
     <div class="salon__text">
       <h1 class="salon__text--heading"><span>W</span>itaj!</h1>
       <p class="salon__text--content">
@@ -121,10 +125,10 @@
       </p>
     </div>
     <div class="salon__hero">
-      <img src="../dist/img/recepcja-trimmed2.webp" class="salon__img" />
+      <img src="../dist/img/recepcja-trimmed2.webp" class="salon__img white-section" />
     </div>
   </section>
-  <section id="offer" class="offer">
+  <section id="offer" class="offer section dark-section">
     <div class="offer__text">
       <h1 class="offer__text--heading"><span>W</span> czym możemy pomóc?</h1>
       <p class="offer__text--content">
@@ -133,7 +137,7 @@
         doloribus at repellendus cum dignissimos sit! Nesciunt, aperiam repellendus. Animi ut
       </p>
     </div>
-    <div class="offer__hero">
+    <div class="offer__hero section white-section">
       <img
         src="../dist/img/podstawowe.jpg"
         alt="photo of a chair in hair salon"
@@ -141,9 +145,96 @@
       />
     </div>
   </section>
+  <section class="offer-cards section dark-section">
+    <div class="offer-cards__text">
+      <h1 class="offer-cards__text--heading"><span>S</span>prawdź naszą ofertę.</h1>
+      <p class="offer-cards__text--content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias temporibus, commodi
+        suscipit cupiditate omnis assumenda accusamus accusantium, culpa quae ut, pariatur ipsa
+        doloribus at repellendus cum dignissimos sit! Nesciunt, aperiam repellendus. Animi ut
+      </p>
+    </div>
+    <div class="cards-container">
+      <div class="offer-cards__card">
+        <div class="offer-cards__card--img"></div>
+        <div class="offer-cards__card--text">
+          <h3>Las zielony</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore dolor dolore deleniti
+            tenetur eaque est repellat accusantium officiis, repellendus adipisci?
+          </p>
+        </div>
+      </div>
+      <div class="offer-cards__card">
+        <div class="offer-cards__card--img"></div>
+        <div class="offer-cards__card--text">
+          <h3>Las zielony</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore dolor dolore deleniti
+            tenetur eaque est repellat accusantium officiis, repellendus adipisci?
+          </p>
+        </div>
+      </div>
+      <div class="offer-cards__card">
+        <div class="offer-cards__card--img"></div>
+        <div class="offer-cards__card--text">
+          <h3>Las zielony</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore dolor dolore deleniti
+            tenetur eaque est repellat accusantium officiis, repellendus adipisci?
+          </p>
+        </div>
+      </div>
+      <div class="offer-cards__card">
+        <div class="offer-cards__card--img"></div>
+        <div class="offer-cards__card--text">
+          <h3>Las zielony</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore dolor dolore deleniti
+            tenetur eaque est repellat accusantium officiis, repellendus adipisci?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="price-list" class="price-list">
+    <h1 class="price-list__heading"><span>C</span><span>ennik</h1>
+    <div class="price-list__container">
+      <div class="price-list__box">
+        <h3 class="price-list__box--subheading">
+          <span class="price-list__box--effect">S</span>trzyżenie damskie
+        </h3>
+        <ul class="pcire-list__list">
+          <li class="price-list__list--item">włosy długie 50zł</li>
+          <li class="price-list__list--item">włosy krótkie 40zł</li>
+        </ul>
+      </div>
+      <div class="price-list__box">
+        <h3 class="price-list__box--subheading">Strzyżenie męskie</h3>
+        <ul class="pcire-list__list">
+          <li class="price-list__list--item">włosy długie 50zł</li>
+          <li class="price-list__list--item">włosy krótkie 40zł</li>
+        </ul>
+      </div>
+      <div class="price-list__box">
+        <h3 class="price-list__box--subheading">Koloryzacja</h3>
+        <ul class="pcire-list__list">
+          <li class="price-list__list--item">włosy długie 250zł</li>
+          <li class="price-list__list--item">włosy krótkie 150zł</li>
+        </ul>
+      </div>
+      <div class="price-list__box">
+        <h3 class="price-list__box--subheading">Stylizacja</h3>
+        <ul class="pcire-list__list">
+          <li class="price-list__list--item">modelowanie 100zł</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </main>
 
-      <footer class="footer">
+      <footer class="footer section white-section">
   <div class="adress xs">
     <h1 class="adress__heading">Adres</h1>
     <p class="adress__content">Salon Fryzjerski "Beata"</p>

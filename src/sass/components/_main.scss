@@ -39,6 +39,158 @@
       }
     }
   }
+  .offer-cards,
+  .price-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 5rem;
+    color: c.$white-light;
+    background-color: #333;
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+      margin-top: 5rem;
+      margin-bottom: 4.5rem;
+
+      &--content {
+        width: 100%;
+      }
+
+      &--heading {
+        font-size: 4rem;
+        letter-spacing: 0.6rem;
+        padding-top: 2rem;
+        font-family: "Oswald", sans-serif;
+      }
+      &--heading::first-letter {
+        color: c.$gold-dark;
+      }
+    }
+    .cards-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+  .offer-cards__card {
+    position: relative;
+    margin: 2rem 2rem;
+    width: 40%;
+    min-width: 28rem;
+    height: 40rem;
+    perspective: 100rem;
+  }
+  .offer-cards__card--img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: 0.8s;
+    background-image: url("/dist/img/krzesło\ klient.jpg");
+    transform: rotateY(0deg);
+  }
+
+  .offer-cards__card--text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 30px;
+    background-image: linear-gradient(315deg, #fee2f8 0%, #dcf8ef 74%);
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.8s;
+    opacity: 0;
+    transform: rotateY(0deg);
+
+    h3 {
+      margin-top: 450px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .offer-cards__card:hover .offer-cards__card--text {
+    transform: rotateY(180deg);
+    opacity: 1;
+  }
+  .offer-cards__card:hover .offer-cards__card--img {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+
+  .price-list {
+    &__heading {
+      font-size: 6rem;
+      padding-bottom: 5rem;
+      letter-spacing: 0.6rem;
+      font-family: "Oswald", sans-serif;
+    }
+    &__heading::first-letter {
+      color: c.$gold-dark;
+    }
+    &__container {
+      box-shadow: 1px 1px 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: c.$white-light;
+      color: black;
+      font-size: 2.5rem;
+      width: 70%;
+      height: 80%;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-radius: 10px;
+    }
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 1rem;
+      padding: 2rem 0rem;
+      transition: background-color 0.3s, color 0.6s, scale 0.6s, letter-spacing 0.3s;
+
+      &--subheading {
+        font-weight: 700;
+        font-size: 1.75rem;
+        color: black;
+        transition: color 0.6s;
+        // background-color: pink;
+      }
+      &--subheading::first-letter {
+        color: c.$gold-dark;
+      }
+    }
+
+    // &__box:hover {
+    //   background-color: #333;
+    //   color: c.$white-light;
+    //   scale: 1.05;
+    //   letter-spacing: 0.05rem;
+    // }
+
+    &__list {
+      &--item {
+        list-style-type: none;
+        font-size: 1.5rem;
+        width: 100%;
+      }
+    }
+  }
 }
 
 // -------------------------@media ----------------

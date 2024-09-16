@@ -3,13 +3,14 @@
 .footer {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   border-top: 1px solid black;
   background-color: rgb(255, 254, 249);
   background-color: rgb(255, 254, 249);
   padding-top: 5rem;
+  padding-bottom: 5rem;
   width: 100%;
-  height: 55vh;
+  height: 100%;
   font-size: 1rem;
   overflow: hidden;
 
@@ -81,17 +82,17 @@
   }
 }
 
-// @media (width < 576px) {
-//   .footer {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     gap: 1.5rem;
+@media (width < 576px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 
-//     .xs {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//     }
-//   }
-// }
+    .xs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
