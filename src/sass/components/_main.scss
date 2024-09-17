@@ -128,47 +128,58 @@
     position: relative;
     margin: 2rem 2rem;
     width: 40%;
-    min-width: 28rem;
-    height: 40rem;
+    min-width: 20rem;
+    height: 30rem;
     perspective: 100rem;
   }
-  .offer-cards__card--img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    transition: 0.8s;
-    background-image: url("/dist/img/krzesło\ klient.jpg");
-    transform: rotateY(0deg);
+  .offer-cards__card {
+    &--img {
+      width: 100%;
+      height: 100%;
+
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      transition: 0.8s;
+      transform: rotateY(180deg);
+    }
+  }
+  .one {
+    background-image: url("/dist/img/scisors-small.webp");
+  }
+  .two {
+    background-image: url("/dist/img/koloryzacja-small1gold.jpg");
+  }
+  .four {
+    background-image: url("/dist/img/modelowanie-small.webp");
+  }
+  .three {
+    background-image: url("/dist/img/not_used/shaver_big.jpg");
   }
 
   .offer-cards__card--text {
     position: absolute;
-    top: 0;
+    top: 0px;
     bottom: 0;
     right: 0;
     left: 0;
-    padding: 30px;
-    background-image: linear-gradient(315deg, #fee2f8 0%, #dcf8ef 74%);
+    padding: 50px;
     border-radius: 10px;
     text-align: center;
     transition: 0.8s;
+    background-color: tomato;
+    color: black;
+    background: linear-gradient(90deg, rgb(235, 235, 235) 0%, rgb(255, 255, 255) 52%);
     opacity: 0;
-    transform: rotateY(0deg);
-
-    h3 {
-      margin-top: 450px;
-      margin-bottom: 20px;
-    }
+    transform: rotateY(180deg);
   }
 
   .offer-cards__card:hover .offer-cards__card--text {
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
     opacity: 1;
   }
   .offer-cards__card:hover .offer-cards__card--img {
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
     opacity: 0;
   }
 
