@@ -5,10 +5,6 @@ window.onload = function () {
   const navMobile = document.querySelector(".nav");
   const allNavLinks = document.querySelectorAll(".nav-mobile__link");
   const footerDate = document.querySelector(".footer__bottom--date");
-  const priceListBox = document.querySelector(".price-list__box");
-  const priceListBoxSubheading = document.querySelector(".price-list__box--subheading");
-  const whiteSection = document.querySelector(".white-section");
-  const darkSection = document.querySelector(".dark-section");
   const allSections = document.querySelectorAll(".section");
 
   console.log(allBurgerBars);
