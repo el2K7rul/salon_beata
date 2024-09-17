@@ -60,9 +60,11 @@
 
 .nav {
   &__link {
+    text-align: center;
     position: relative;
     font-size: 2.5rem;
-    padding: 2rem 3rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
     text-decoration: none;
     color: c.$black-basic;
   }
@@ -77,8 +79,8 @@
   &__link::after {
     content: "";
     position: absolute;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.2rem;
+    height: 0.2rem;
     border-radius: 0.6rem;
   }
 
@@ -98,7 +100,7 @@
 
   &__link:hover::before,
   &__link:hover::after {
-    width: 5rem;
+    width: 25%;
     height: 50%;
   }
 

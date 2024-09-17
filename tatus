@@ -1,0 +1,59 @@
+[33mcommit 9a243f7f09a0d496883a87a2f441ce6582671c25[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mnewHeader[m[33m, [m[1;31morigin/newHeader[m[33m)[m
+Author: Karol_O <elkarul@gmail.com>
+Date:   Mon Sep 16 22:32:57 2024 +0200
+
+    added contactus to main page
+
+[33mcommit f89ab01bcfbc63a8c9da72ed58e54944cfe0409f[m
+Author: Karol_O <elkarul@gmail.com>
+Date:   Mon Sep 16 17:10:08 2024 +0200
+
+    created book-link animations in keyframes
+
+[33mcommit 6e29fa4802ac32ed7b5cf0f11f668eb8c58db913[m
+Author: Karol_O <elkarul@gmail.com>
+Date:   Mon Sep 16 11:32:45 2024 +0200
+
+    added pricing-list section
+
+[33mcommit 249ec4470bf105ef8e7e45bfc196808c821a7a05[m
+Author: Karol_O <elkarul@gmail.com>
+Date:   Sun Sep 15 21:41:36 2024 +0200
+
+    added display at @media w<1200px
+
+[33mcommit 4b558c46943a41d08def75b0cf011e54cffa1768[m
+Author: Karol_O <elkarul@gmail.com>
+Date:   Thu Sep 12 21:56:48 2024 +0200
+
+    final version of nav - working on  header
+
+[33mcommit 09339e9cb4a1452262e7f34f31ea6597ff0cb320[m
+Author: Karol_O <elkarul@gmail.com>
+Date:   Thu Sep 12 14:15:58 2024 +0200
+
+    modified link hover
+
+[33mcommit b26f38404e3e5b0bd8dbb3e3c6e05d62b99bfcc9[m
+Author: Karol_O <elkarul@gmail.com>
+Date:   Sun Sep 8 08:07:56 2024 +0200
+
+    Best working app - need to add @media for desktop
+
+[33mcommit b59abb7d26799beeabd0d98807d23728212902dd[m
+Author: Karol_O <elkarul@gmail.com>
+Date:   Fri Sep 6 16:23:59 2024 +0200
+
+    created new header canvas
+
+[33mcommit a22c4a1e95dbe2b5ab65fc2b5c50d3508210ba70[m[33m ([m[1;31morigin/header-without-carousel[m[33m, [m[1;32mheader-without-carousel[m[33m)[m
+Author: Karol_O <elkarul@gmail.com>
+Date:   Fri Sep 6 11:52:21 2024 +0200
+
+    working site disigned in white
+
+[33mcommit 5bd769cc7615ec98dee03a9595435b843f655e66[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/bootstrap_carousel[m[33m, [m[1;32mmain[m[33m, [m[1;32mgold_design[m[33m, [m[1;32mboostrap-carousel[m[33m)[m
+Author: Karol_O <elkarul@gmail.com>
+Date:   Tue Sep 3 08:32:39 2024 +0200
+
+    Project of salon beata page
