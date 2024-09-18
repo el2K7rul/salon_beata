@@ -284,19 +284,21 @@
   <form action="#" class="form white-section section">
     <div class="form__wrapper">
       <div class="form__box">
-        <input type="text" id="name" name="tel" class="form__box--input" />
+        <input type="text" id="name" name="tel" class="form__box--input name" />
         <label for="name" class="form__box--label"> Imię</label>
       </div>
 
       <div class="form__box">
-        <input type="tel" id="tel" name="tel" class="form__box--input" />
+        <input type="tel" id="tel" name="tel" class="telNum" />
         <label for="tel" class="form__box--label">Telefon</label>
       </div>
 
       <dic class="form__box">
-        <input type="email" id="mail" name="mail" class="form__box--input" />
+        <input type="email" id="mail" name="mail" class="email" placeholder="" />
         <label for="mail" class="form__box--label"> e-mail </label>
       </dic>
+      <p class="error-msg-tel"></p>
+      <p class="error-msg-mail"></p>
     </div>
     <div class="message">
       <label for="msg" class="message__textarea--label">Wiadomość:</label>

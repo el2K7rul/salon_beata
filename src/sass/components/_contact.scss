@@ -98,12 +98,22 @@
           outline: none;
         }
       }
+
       &--label {
         font-size: 1.5rem;
         color: c.$grey-text;
         margin-bottom: 2rem;
         align-self: flex-end;
       }
+    }
+
+    .error-display {
+      font-size: 1.6rem;
+      color: tomato;
+      // background-color: pink;
+    }
+    .error-msg {
+      overflow: hidden;
     }
 
     .message {
@@ -168,6 +178,30 @@
         &:hover::before {
           animation: pulse2 1s;
         }
+      }
+    }
+    .email {
+      width: 100%;
+      border: none;
+      padding: 0.5rem;
+      border-bottom: 1px solid c.$grey-text;
+      &::placeholder {
+        font-size: 1.5rem;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .telNum {
+      width: 100%;
+      border: none;
+      padding: 0.5rem;
+      border-bottom: 1px solid c.$grey-text;
+      &::placeholder {
+        font-size: 1.5rem;
+      }
+      &:focus {
+        outline: none;
       }
     }
   }
