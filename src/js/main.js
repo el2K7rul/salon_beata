@@ -7,7 +7,7 @@ window.onload = function () {
   const allNavLinks = document.querySelectorAll(".nav-mobile__link");
   const footerDate = document.querySelector(".footer__bottom--date");
   const allSections = document.querySelectorAll(".section");
-  const errorMsgMail = document.querySelector(".error-msg-mail");
+  const errorMsg = document.querySelector(".error-msg");
   const errorMsgTel = document.querySelector(".error-msg-tel");
   const email = document.querySelector(".email");
   const telNum = document.querySelector(".telNum");
@@ -53,46 +53,47 @@ window.onload = function () {
     });
   };
 
-  // const checkTelNum = (telNum) => {
-  //   const validTel = /^[?<!\w][\[?[\+|00]?48\]?]?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}[?!\w]/;
+  const checkTelNum = (telNum) => {
+    const validNum = /^[0-9\+]{8,13}$/;
 
-  //   if (validTel.test(telNum.value)) {
-  //     clearError(telNum);
-  //   } else {
-  //     showError(telNum, "wpisz poprawny nr tel.");
-  //   }
-  // };
+    if (validNum.test(telNum.value)) {
+      clearError(errorMsgTel);
+    } else {
+      showError(errorMsgTel, "wpisz poprawny nr tel.");
+    }
+  };
 
   const checkMail = (email) => {
     const validMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     if (validMail.test(email.value)) {
-      clearError(email);
+      clearError(errorMsg);
     } else {
-      showError(email, "wpisz poprawny adres email.");
+      showError(errorMsg, "wpisz poprawny adres email.");
     }
   };
   const clearError = (el) => {
-    const formBox = el.errorMsgMail;
+    const formBox = el;
     formBox.classList.remove("error-display");
-    errorMsgMail.textContent = "";
+    formBox.textContent = "";
   };
 
   const showError = (input, msg) => {
-    errorMsgMail.classList.add("error-display");
-    errorMsgMail.textContent = msg;
+    const formBox = input;
+    formBox.classList.add("error-display");
+    formBox.textContent = msg;
   };
 
-  const checkForm = (el) => {
-    if (el.value === "") {
-      showError(el, "wpisz mail");
-      showError(el, "wpisz tel");
-    } else {
-      // clearError(el);
-      checkMail(email);
-      checkTelNum(telNum);
-    }
-  };
+  // const checkForm = (el) => {
+  //   if (el.value === "") {
+  //     showError(el, "wpisz mail");
+
+  //   } else {
+
+  //     checkMail(email);
+  //     checkTelNum(telNum);
+  //   }
+  // };
 
   // event listeners
   window.addEventListener("scroll", handleObserver);

@@ -307,6 +307,9 @@
           font-size: 3rem;
         }
       }
+      .price-list__list--item {
+        font-size: 2rem;
+      }
     }
   }
 }
@@ -365,6 +368,9 @@
       &__box--subheading {
         font-size: 3rem;
       }
+    }
+    .price-list__list--item {
+      font-size: 2rem;
     }
   }
 }
