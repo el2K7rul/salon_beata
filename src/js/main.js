@@ -2,7 +2,7 @@ window.onload = function () {
   //selectors
   const burger = document.querySelector(".burger");
   const allBurgerBars = document.querySelectorAll(".burger__bars");
-
+  const body = document.querySelector(".body");
   const navMobile = document.querySelector(".nav");
   const allNavLinks = document.querySelectorAll(".nav-mobile__link");
   const footerDate = document.querySelector(".footer__bottom--date");
@@ -19,6 +19,9 @@ window.onload = function () {
   const currentYear = currentDate.getFullYear();
 
   //functions
+
+  console.log(body);
+
   const handleFooterYear = () => {
     footerDate.textContent = currentYear.toString();
   };
@@ -26,11 +29,13 @@ window.onload = function () {
   const handleNav = () => {
     navMobile.classList.toggle("active");
     burger.classList.toggle("active");
+    body.classList.toggle("disable-scroll");
 
     allNavLinks.forEach((link) => {
       link.addEventListener("click", () => {
         navMobile.classList.remove("active");
         burger.classList.remove("active");
+        body.classList.remove("disable-scroll");
       });
     });
   };

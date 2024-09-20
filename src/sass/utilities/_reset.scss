@@ -17,7 +17,11 @@ body {
   font-size: 1.6rem;
   font-family: "Josefine", sans-serif;
   background-color: c.$white-light;
-  // background-color: tomato;
+}
+
+.disable-scroll {
+  height: 100%;
+  overflow: hidden;
 }
 
 // /* width */
