@@ -331,6 +331,12 @@
     }
   }
 }
+@media (height <= 330px) {
+  .nav-mobile__link {
+    padding: 0;
+    font-size: 2rem;
+  }
+}
 
 @keyframes pulse {
   from {
