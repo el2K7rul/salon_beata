@@ -7,7 +7,6 @@
   .salon {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid c.$gold-dark;
 
     &__img {
       width: 100%;
@@ -30,7 +29,7 @@
       padding-bottom: 10rem;
       padding-left: 4rem;
       padding-right: 4rem;
-      background-color: c.$grey-bg;
+      background-color: c.$black-basic;
       color: c.$white-light;
       &--heading {
         font-size: 4rem;
@@ -48,7 +47,6 @@
   .how {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid c.$gold-dark;
 
     &__img {
       width: 100%;
@@ -72,8 +70,9 @@
       padding-left: 4rem;
       padding-right: 4rem;
       padding-bottom: 10rem;
-      background-color: #333;
+      background-color: c.$black-basic;
       color: c.$white-light;
+      border-bottom: 1px solid c.$gold-dark;
       &--heading {
         font-size: 4rem;
         letter-spacing: 0.6rem;
@@ -95,7 +94,7 @@
     width: 100%;
     padding-bottom: 5rem;
     color: c.$white-light;
-    background-color: c.$grey-bg;
+    background-color: c.$black-basic;
 
     &__text {
       display: flex;
@@ -130,43 +129,82 @@
   }
   .offer-cards__card {
     position: relative;
-    margin: 2rem 2rem;
-    width: 40%;
-    min-width: 20rem;
-    height: 30rem;
-    perspective: 100rem;
-  }
-  .offer-cards__card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &--heading {
+    margin: 10px;
+    height: 450px;
+    width: 300px;
+    border-radius: 15px;
+    background-position: center;
+    background-size: 100% 100%;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(126, 126, 126, 0.732);
+
+    &--text {
       position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
       bottom: 0;
       display: flex;
-      align-items: center;
+      border-radius: 15px;
+      flex-direction: column;
       justify-content: center;
-      transform: rotateY(180deg);
-      font-size: 2.5rem;
-      letter-spacing: 0.5rem;
+      align-items: center;
+      padding: 80px 30px;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      clip-path: circle(0% at 50% 95%);
+      transition: clip-path 0.8s;
 
-      width: 100%;
-      height: 20%;
-      text-align: center;
-      background-color: rgba(134, 134, 134, 0.721);
-      color: c.$white-light;
+      .btn-wrapper {
+        position: relative;
+        transition: scale 0.3s;
+        cursor: pointer;
+        margin-top: 4rem;
+        .work-btn {
+          font-size: 1.75rem;
+          padding: 1rem;
+          color: c.$white-light;
+          border: none;
+          background: none;
+          letter-spacing: 0.25rem;
+          &::first-letter {
+            color: c.$gold-dark;
+          }
+          // box-shadow: 1px 1px 1px 5px c.$white-light;
+        }
+        .work-btn:hover {
+          scale: 1.05;
+        }
+        &::before {
+          position: absolute;
+          top: 0;
+          right: 0;
+          content: "";
+          width: 100%;
+          height: 100%;
+          border: 1px solid c.$gold-dark;
+          border-radius: 5%;
+          opacity: 0;
+        }
+        &:hover::before {
+          animation: pulse 1s;
+        }
+      }
     }
-    &--img {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      border-radius: 10px;
-      transition: 0.8s;
-      transform: rotateY(180deg);
+    &--text-header {
+      margin-bottom: 3rem;
+      font-size: 3rem;
+      letter-spacing: 0.25rem;
+    }
+    &--text-paragraph {
+      text-align: left;
     }
   }
+
+  .offer-cards__card:hover > .offer-cards__card--text {
+    clip-path: circle(120% at 50% 90%);
+  }
+
   .one {
     background-image: url("/assets/scisorssmall.webp");
   }
@@ -179,122 +217,67 @@
   .three {
     background-image: url("/assets/shaverbiggold.webp");
   }
+}
 
-  .offer-cards__card--text {
-    position: absolute;
-    top: 0px;
-    bottom: 0;
-    right: 0;
-    left: 0;
+.price-list {
+  &__heading {
+    font-size: 4rem;
+    padding: 5rem 0rem 5rem 0rem;
+    letter-spacing: 0.6rem;
+    font-family: "Oswald", sans-serif;
+  }
+  &__heading::first-letter {
+    color: c.$gold-dark;
+  }
+  &__container {
+    box-shadow: 1px 1px 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    color: c.$black-basic;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    height: 80%;
+    width: 90%;
+    font-size: 2.5rem;
+    background-color: c.$white-light;
+    color: black;
     border-radius: 10px;
-    padding: 2rem;
-    background: linear-gradient(90deg, rgb(235, 235, 235) 0%, rgb(255, 255, 255) 52%);
-    transition: 0.8s;
-    transform: rotateY(180deg);
-    opacity: 0;
-    p {
-      // background-color: tomato;
-      letter-spacing: 0.1rem;
-      width: 80%;
-      height: 100%;
-    }
-    .work-btn {
-      position: absolute;
-      bottom: 5%;
-      margin-top: 0.5rem;
-      padding: 0.3rem;
-      padding: 0.5rem;
+  }
 
-      background: transparent;
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    transition: background-color 0.3s, color 0.6s, scale 0.6s, letter-spacing 0.3s;
+
+    &--subheading {
       font-weight: 700;
-      height: 8rem;
-      width: 8rem;
-      font-size: 1.5rem;
-      border: 1px solid c.$gold-dark;
-      color: c.$black-basic;
-      border-radius: 50%;
-      transition: scale 0.3s, letter-spacing 0.3s;
+      font-size: 1.75rem;
+      color: black;
+      transition: color 0.6s;
+      // background-color: pink;
     }
-    .work-btn:hover {
-      scale: 1.1;
-      letter-spacing: 0.1rem;
-    }
-  }
-
-  .offer-cards__card:hover .offer-cards__card--text {
-    transform: rotateY(0deg);
-    opacity: 1;
-  }
-  .offer-cards__card:hover .offer-cards__card--img {
-    transform: rotateY(0deg);
-    opacity: 0;
-  }
-
-  .price-list {
-    &__heading {
-      font-size: 4rem;
-      padding: 5rem 0rem 5rem 0rem;
-      letter-spacing: 0.6rem;
-      font-family: "Oswald", sans-serif;
-    }
-    &__heading::first-letter {
+    &--subheading::first-letter {
       color: c.$gold-dark;
     }
-    &__container {
-      box-shadow: 1px 1px 5px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 5rem;
-      padding-bottom: 1rem;
-      height: 80%;
-      width: 90%;
-      font-size: 2.5rem;
-      background-color: c.$white-light;
-      color: black;
-      border-radius: 10px;
-    }
+  }
 
-    &__box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  &__box:hover {
+    scale: 1.01;
+    letter-spacing: 0.05rem;
+  }
+
+  &__list {
+    padding: 0;
+    &--item {
+      list-style-type: none;
+      font-size: 1.5rem;
       width: 100%;
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      transition: background-color 0.3s, color 0.6s, scale 0.6s, letter-spacing 0.3s;
-
-      &--subheading {
-        font-weight: 700;
-        font-size: 1.75rem;
-        color: black;
-        transition: color 0.6s;
-        // background-color: pink;
-      }
-      &--subheading::first-letter {
-        color: c.$gold-dark;
-      }
-    }
-
-    &__box:hover {
-      scale: 1.01;
-      letter-spacing: 0.05rem;
-    }
-
-    &__list {
-      padding: 0;
-      &--item {
-        list-style-type: none;
-        font-size: 1.5rem;
-        width: 100%;
-        margin: 1rem 0 1rem 0;
-      }
+      margin: 1rem 0 1rem 0;
     }
   }
 }
@@ -377,7 +360,6 @@
       }
       &__img {
         width: 50%;
-        background-color: pink;
         &--small {
           display: none;
         }
@@ -385,7 +367,6 @@
           display: block;
           width: 50%;
           min-height: 50rem;
-          // height: 100%;
         }
       }
     }
@@ -396,7 +377,6 @@
       }
       &__img {
         width: 50%;
-        background-color: pink;
         &--small {
           display: none;
         }
@@ -404,7 +384,6 @@
           display: block;
           width: 50%;
           min-height: 50rem;
-          // height: 100%;
         }
       }
     }

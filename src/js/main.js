@@ -5,6 +5,7 @@ window.onload = function () {
   const body = document.querySelector(".body");
   const navMobile = document.querySelector(".nav");
   const allNavLinks = document.querySelectorAll(".nav-mobile__link");
+  const arrowUp = document.querySelector(".arrowup");
   const footerDate = document.querySelector(".footer__bottom--date");
   const allSections = document.querySelectorAll(".section");
   const errorMsg = document.querySelector(".error-msg");
@@ -19,8 +20,6 @@ window.onload = function () {
   const currentYear = currentDate.getFullYear();
 
   //functions
-
-  console.log(body);
 
   const handleFooterYear = () => {
     footerDate.textContent = currentYear.toString();
@@ -39,6 +38,15 @@ window.onload = function () {
       });
     });
   };
+  const handleArrowUp = () => {
+    const currentSection = window.scrollY;
+    if (currentSection > 480) {
+      arrowUp.classList.add("active");
+    } else {
+      arrowUp.classList.remove("active");
+    }
+    // console.log(window.scrollY);
+  };
 
   const handleObserver = () => {
     const currentSection = window.scrollY;
@@ -56,6 +64,7 @@ window.onload = function () {
         allBurgerBars.forEach((bar) => bar.classList.remove("white-burger"));
       }
     });
+    handleArrowUp();
   };
 
   const checkTelNum = (telNum) => {
@@ -89,25 +98,46 @@ window.onload = function () {
     formBox.textContent = msg;
   };
 
-  // const checkForm = (el) => {
-  //   if (el.value === "") {
-  //     showError(el, "wpisz mail");
-
-  //   } else {
-
-  //     checkMail(email);
-  //     checkTelNum(telNum);
-  //   }
-  // };
-
   // event listeners
   window.addEventListener("scroll", handleObserver);
   burger.addEventListener("click", handleNav);
   submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    // checkForm(email, telNum);
     checkMail(email);
     checkTelNum(telNum);
   });
+
   handleFooterYear();
+
+  // ------------- GALLERY -----------------------------------
+
+  const carousel = document.querySelector(".carousel");
+  const workBtnOne = document.querySelector(".btn-one");
+  const workBtnTwo = document.querySelector(".btn-two");
+  const workBtnThree = document.querySelector(".btn-three");
+  const workBtnFour = document.querySelector(".btn-four");
+  const box = document.querySelector(".box");
+  const firstImg = carousel.querySelectorAll(".img")[0];
+  const arrowIcons = document.querySelectorAll(".arrow");
+
+  arrowIcons.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      let firstImgWidth = firstImg.clientWidth;
+      carousel.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("box") && body.classList.contains("disable-scroll")) {
+      box.classList.remove("display-gallery");
+      body.classList.remove("disable-scroll");
+    }
+  });
+
+  workBtnOne.addEventListener("click", () => {
+    {
+      box.classList.add("display-gallery");
+      body.classList.add("disable-scroll");
+    }
+  });
 };

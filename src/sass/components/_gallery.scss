@@ -1,0 +1,88 @@
+@use "../utilities/colors" as c;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.box {
+  display: none;
+  // display: flex;
+  padding-top: 10rem;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 10000;
+}
+.gallery {
+  display: flex;
+  max-width: 400px;
+  top: 20%;
+  border: 5px solid c.$white-light;
+
+  transform: translateY(-50%);
+  position: relative;
+}
+.gallery .arrow {
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343f4f;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: rgba(225, 225, 225, 0.9);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.05s linear, background 0.2s;
+  z-index: 1000;
+}
+.gallery i:active {
+  transform: translateY(-50%) scale(0.9);
+}
+.gallery i:hover {
+  background: #f2f2f2;
+}
+.gallery i:first-child {
+  left: -5.2rem;
+}
+.gallery i:last-child {
+  right: -5.2rem;
+}
+.gallery .carousel {
+  font-size: 0px;
+  cursor: pointer;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+.carousel img {
+  height: 60vh;
+  max-width: 100%;
+  object-fit: cover;
+  user-select: none;
+  width: calc(100%);
+}
+
+.display-gallery {
+  display: flex;
+}
+@media screen and (max-width: 900px) {
+  .carousel img {
+    width: calc(100%);
+  }
+}
+@media screen and (max-width: 550px) {
+  .carousel img {
+    width: 100%;
+  }
+}
