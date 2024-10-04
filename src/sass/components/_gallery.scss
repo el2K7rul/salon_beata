@@ -1,88 +1,156 @@
 @use "../utilities/colors" as c;
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-.box {
-  display: none;
-  // display: flex;
-  padding-top: 10rem;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.9);
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  z-index: 10000;
-}
 .gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   display: flex;
-  max-width: 400px;
-  top: 20%;
-  border: 5px solid c.$white-light;
-
-  transform: translateY(-50%);
-  position: relative;
-}
-.gallery .arrow {
-  top: 50%;
-  height: 44px;
-  width: 44px;
-  color: #343f4f;
-  cursor: pointer;
-  font-size: 1.15rem;
-  position: absolute;
-  text-align: center;
-  line-height: 44px;
-  background: rgba(225, 225, 225, 0.9);
-  border-radius: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.05s linear, background 0.2s;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
   z-index: 1000;
-}
-.gallery i:active {
-  transform: translateY(-50%) scale(0.9);
-}
-.gallery i:hover {
-  background: #f2f2f2;
-}
-.gallery i:first-child {
-  left: -5.2rem;
-}
-.gallery i:last-child {
-  right: -5.2rem;
-}
-.gallery .carousel {
-  font-size: 0px;
-  cursor: pointer;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  overflow: hidden;
-}
-
-.carousel img {
-  height: 60vh;
-  max-width: 100%;
-  object-fit: cover;
-  user-select: none;
-  width: calc(100%);
+  background-color: rgba(0, 0, 0, 0.8);
+  clip-path: circle(150% at 50% 40%);
+  transition: clip-path 0.8s;
+  transition-delay: 50ms;
 }
 
 .display-gallery {
-  display: flex;
+  clip-path: circle(150% at 50% 95%);
 }
-@media screen and (max-width: 900px) {
-  .carousel img {
-    width: calc(100%);
+
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 70vw;
+  .carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 40rem;
+    width: 100%;
+    // max-width: 100%;
+    height: 50rem;
+    overflow: hidden;
+  }
+  .outer-arrow-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    height: 70%;
+    min-height: 50rem;
+  }
+  .carousel-thumbnails {
+    display: inline-flex;
+    z-index: 10000;
+    height: 9em;
+    width: 40rem;
+    border-radius: 0.5em;
+    margin-top: 1em;
+
+    background-color: transparent;
+    .thumbnail-img {
+      border-radius: 0.4em;
+      display: block;
+      width: 30%;
+      height: 100%;
+      padding: 0.3em;
+      opacity: 0.6;
+      cursor: pointer;
+    }
+    .thumbnail-active {
+      opacity: 1;
+      scale: 1.05;
+    }
   }
 }
-@media screen and (max-width: 550px) {
-  .carousel img {
+
+.img {
+  position: absolute;
+  opacity: 0;
+  border-radius: 1rem;
+  max-height: 100%;
+  width: 100%;
+  border: 5px solid c.$white-light;
+  overflow: hidden;
+  transition: right 0.5s, opacity 0.8s;
+}
+.show-image {
+  right: 0;
+  z-index: 1001;
+  opacity: 1;
+}
+
+.arrow-outer,
+.arrow-inner {
+  color: #fff;
+  font-size: 4.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  transition: scale 0.3s, background-color 0.3s, color 0.8s;
+}
+.arrow-inner {
+  display: none;
+}
+
+.arrow-outer:hover,
+.arrow-inner:hover {
+  scale: 0.9;
+  background-color: rgba(251, 251, 251, 0.848);
+  color: c.$black-basic;
+}
+
+@media (width < 576px) {
+  .img {
+    border: none;
     width: 100%;
+  }
+  .gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel-wrapper {
+    width: 100%;
+  }
+
+  .carousel-thumbnails {
+    display: inline-flex;
+    z-index: 10000;
+    min-height: 6em;
+    width: 100%;
+  }
+
+  // .outer-arrow-box {
+  //   display: none;
+  // }
+  .arrow-outer {
+    display: none;
+  }
+  .arrow-inner {
+    display: flex;
+    justify-content: space-between;
+    z-index: 10000;
+
+    // width: 100%;
+  }
+  .left-btn {
+    position: fixed;
+    left: 0;
+  }
+  .right-btn {
+    position: fixed;
+    right: 0;
   }
 }

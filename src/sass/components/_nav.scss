@@ -192,7 +192,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 20vw;
+    width: 21%;
     height: 100%;
     background-color: c.$black-basic;
 
@@ -266,15 +266,16 @@
   }
   .nav-desktop {
     position: sticky;
-    top: 0;
+    top: 0%;
     right: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 10rem;
     background-color: #333;
     z-index: 10;
+    transition: top 0.5s;
     &__book {
       position: relative;
       transition: scale 0.3s;
@@ -329,6 +330,10 @@
       }
     }
   }
+  .nav-transition {
+    top: -100%;
+  }
+
   .facebook-ico {
     font-size: 2rem;
     color: c.$white-light;

@@ -4,6 +4,7 @@ window.onload = function () {
   const allBurgerBars = document.querySelectorAll(".burger__bars");
   const body = document.querySelector(".body");
   const navMobile = document.querySelector(".nav");
+  const navDesktop = document.querySelector(".nav-desktop");
   const allNavLinks = document.querySelectorAll(".nav-mobile__link");
   const arrowUp = document.querySelector(".arrowup");
   const footerDate = document.querySelector(".footer__bottom--date");
@@ -111,33 +112,103 @@ window.onload = function () {
 
   // ------------- GALLERY -----------------------------------
 
+  // const carousel = document.querySelector(".carousel");
+  // const workBtnOne = document.querySelector(".btn-one");
+  // const workBtnTwo = document.querySelector(".btn-two");
+  // const workBtnThree = document.querySelector(".btn-three");
+  // const workBtnFour = document.querySelector(".btn-four");
+  // const box = document.querySelector(".box");
+  // const firstImg = carousel.querySelectorAll(".img")[0];
+  // const arrowIcons = document.querySelectorAll(".arrow");
+
+  // arrowIcons.forEach((icon) => {
+  //   icon.addEventListener("click", () => {
+  //     let firstImgWidth = firstImg.clientWidth;
+  //     carousel.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
+  //   });
+  // });
+
+  // document.addEventListener("click", (e) => {
+  //   if (e.target.classList.contains("box") && body.classList.contains("disable-scroll")) {
+  //     box.classList.remove("display-gallery");
+  //     body.classList.remove("disable-scroll");
+  //   }
+  // });
+
+  // workBtnOne.addEventListener("click", () => {
+  //   {
+  //     box.classList.add("display-gallery");
+  //     body.classList.add("disable-scroll");
+  //   }
+  // })
+
+  // ------------- GALLERY -----------------------------------
+
   const carousel = document.querySelector(".carousel");
   const workBtnOne = document.querySelector(".btn-one");
   const workBtnTwo = document.querySelector(".btn-two");
   const workBtnThree = document.querySelector(".btn-three");
   const workBtnFour = document.querySelector(".btn-four");
-  const box = document.querySelector(".box");
-  const firstImg = carousel.querySelectorAll(".img")[0];
+  const gallery = document.querySelector(".gallery");
+  const images = carousel.querySelectorAll(".img");
   const arrowIcons = document.querySelectorAll(".arrow");
+  const thumbnailsCarousel = document.querySelector(".carousel-thumbnails");
+  const thumbnailImages = document.querySelectorAll(".thumbnail-img");
+
+  console.log(thumbnailImages);
+
+  let index = 0;
+
+  function handleArrowBehavior(icon) {
+    if (icon.classList.contains("show-image")) {
+      icon.classList.remove("show-image");
+    } else if (icon.id === "left" && index > 0) {
+      index--;
+    } else if (icon.id === "left" && index === 0) {
+      index = 9;
+      index--;
+    } else if (icon.id === "right" && index < 8) {
+      index++;
+    } else {
+      index = 0;
+      index * 2;
+    }
+    handleDisplayImage(index);
+  }
+
+  function handleDisplayImage(currentIndex) {
+    images.forEach((image, index) =>
+      index === currentIndex
+        ? image.classList.add("show-image")
+        : image.classList.remove("show-image")
+    ) &&
+      thumbnailImages.forEach((image, index) =>
+        index === currentIndex
+          ? image.classList.add("thumbnail-active")
+          : image.classList.remove("thumbnail-active")
+      );
+  }
 
   arrowIcons.forEach((icon) => {
-    icon.addEventListener("click", () => {
-      let firstImgWidth = firstImg.clientWidth;
-      carousel.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
-    });
+    icon.addEventListener("click", () => handleArrowBehavior(icon));
   });
 
   document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("box") && body.classList.contains("disable-scroll")) {
-      box.classList.remove("display-gallery");
+    if (
+      (e.target.classList.contains("gallery") && body.classList.contains("disable-scroll")) ||
+      body.classList.contains("carousel")
+    ) {
+      gallery.classList.remove("display-gallery");
       body.classList.remove("disable-scroll");
+      navDesktop.classList.remove("nav-transition");
     }
   });
 
   workBtnOne.addEventListener("click", () => {
     {
-      box.classList.add("display-gallery");
       body.classList.add("disable-scroll");
+      gallery.classList.add("display-gallery");
+      navDesktop.classList.add("nav-transition");
     }
   });
 };
