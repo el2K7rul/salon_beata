@@ -112,38 +112,6 @@ window.onload = function () {
 
   // ------------- GALLERY -----------------------------------
 
-  // const carousel = document.querySelector(".carousel");
-  // const workBtnOne = document.querySelector(".btn-one");
-  // const workBtnTwo = document.querySelector(".btn-two");
-  // const workBtnThree = document.querySelector(".btn-three");
-  // const workBtnFour = document.querySelector(".btn-four");
-  // const box = document.querySelector(".box");
-  // const firstImg = carousel.querySelectorAll(".img")[0];
-  // const arrowIcons = document.querySelectorAll(".arrow");
-
-  // arrowIcons.forEach((icon) => {
-  //   icon.addEventListener("click", () => {
-  //     let firstImgWidth = firstImg.clientWidth;
-  //     carousel.scrollLeft += icon.id === "left" ? -firstImgWidth : firstImgWidth;
-  //   });
-  // });
-
-  // document.addEventListener("click", (e) => {
-  //   if (e.target.classList.contains("box") && body.classList.contains("disable-scroll")) {
-  //     box.classList.remove("display-gallery");
-  //     body.classList.remove("disable-scroll");
-  //   }
-  // });
-
-  // workBtnOne.addEventListener("click", () => {
-  //   {
-  //     box.classList.add("display-gallery");
-  //     body.classList.add("disable-scroll");
-  //   }
-  // })
-
-  // ------------- GALLERY -----------------------------------
-
   const carousel = document.querySelector(".carousel");
   const workBtnOne = document.querySelector(".btn-one");
   const workBtnTwo = document.querySelector(".btn-two");
@@ -156,8 +124,6 @@ window.onload = function () {
   const thumbnailImages = document.querySelectorAll(".thumbnail-img");
 
   let index = 4;
-  const thumbnailImagesArray = Array.from(thumbnailImages);
-  console.log(thumbnailImagesArray);
 
   function handleArrowAction(icon) {
     if (icon.id === "left" && index > 0) {
@@ -171,10 +137,8 @@ window.onload = function () {
       index = 0;
       index * 2;
     }
-    console.log(index);
-    console.log(icon.id);
+
     handleDisplayImage(index);
-    // handleActivateThumbnail(index);
   }
 
   function handleDisplayImage(currentIndex) {
@@ -195,7 +159,9 @@ window.onload = function () {
     );
   }
 
-  thumbnailImagesArray.forEach((thumbnail, thumbnailIndex) =>
+  // event listeners -------------------------------------------------------------------
+
+  thumbnailImages.forEach((thumbnail, thumbnailIndex) =>
     thumbnail.addEventListener("click", () => (index = thumbnailIndex) && handleDisplayImage(index))
   );
 
