@@ -133,6 +133,7 @@ window.onload = function () {
       index--;
     } else if (icon.id === "right" && index < 8) {
       index++;
+        // thumbnailImages.forEach((image) => (image.style.transform = "translateX(-130px)"));
     } else {
       index = 0;
       index * 2;

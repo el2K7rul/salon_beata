@@ -26,18 +26,16 @@
 .carousel-wrapper {
   display: flex;
   align-items: center;
-  width: 50rem;
-  height: 50rem;
-  margin-top: 50%;
-  transform: translateY(-50%);
-
+  width: 40rem;
+  height: 45rem;
+ 
   .carousel {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40rem;
-    height: 50rem;
+    width: 100%;
+    height: 100%;
   }
   .outer-arrow-box {
     display: flex;
@@ -88,10 +86,10 @@
 }
 
 .carousel-thumbnails-wrapper {
-  top: -31%;
   position: relative;
-  width: 40rem;
-  height: 9rem;
+  width: 31.5rem;
+  height: 100%;
+  overflow: hidden;
 
   .carousel-thumbnails {
     position: absolute;
@@ -106,7 +104,7 @@
     overflow: hidden;
     .thumbnail-img {
       border-radius: 0.4em;
-      width: 13rem;
+      width: 10rem;
       height: 100%;
       margin: 0.3rem;
 
@@ -142,9 +140,7 @@
     width: 100%;
   }
 
-  // .outer-arrow-box {
-  //   display: none;
-  // }
+
   .arrow-outer {
     display: none;
   }
