@@ -123,23 +123,42 @@ window.onload = function () {
   const thumbnailsCarousel = document.querySelector(".carousel-thumbnails");
   const thumbnailImages = document.querySelectorAll(".thumbnail-img");
 
-  let index = 4;
+  let index = 2;
 
   function handleArrowAction(icon) {
-    if (icon.id === "left" && index > 0) {
+    handleSwipeThumbnails(icon)
+    if(icon.id === "left" && index > 0) {
       index--;
     } else if (icon.id === "left" && index === 0) {
       index = 9;
       index--;
     } else if (icon.id === "right" && index < 8) {
       index++;
-        // thumbnailImages.forEach((image) => (image.style.transform = "translateX(-130px)"));
     } else {
       index = 0;
-      index * 2;
     }
 
     handleDisplayImage(index);
+    console.log(index);
+    console.log(icon.id);
+  }
+
+  function handleSwipeThumbnails(icon){
+    if(icon.id === 'left'){
+      thumbnailsCarousel.scroll(
+        {
+          top: 0,
+          left: -78.75,
+          behavior: 'smooth'
+        });
+    } else if(icon.id === 'right'){
+      thumbnailsCarousel.scroll(
+        {
+          top: 0,
+          left: 78.75,
+          behavior: 'smooth'
+        });
+    }
   }
 
   function handleDisplayImage(currentIndex) {

@@ -36,6 +36,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    scroll-snap-type: x mandatory;
   }
   .outer-arrow-box {
     display: flex;
@@ -56,6 +57,7 @@
     border: 5px solid c.$white-light;
     overflow: hidden;
     transition: right 0.5s, opacity 0.8s;
+    scroll-snap-align: center;
   }
   .show-image {
     right: 0;
@@ -86,28 +88,26 @@
 }
 
 .carousel-thumbnails-wrapper {
-  position: relative;
   width: 31.5rem;
   height: 100%;
-  overflow: hidden;
+  
 
   .carousel-thumbnails {
-    position: absolute;
-    display: inline-flex;
-    justify-content: center;
-    z-index: 10000;
-    height: 9em;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    height: 10rem;
     width: 100%;
     border-radius: 0.5em;
     margin-top: 1em;
     background-color: transparent;
     overflow: hidden;
+  
     .thumbnail-img {
       border-radius: 0.4em;
       width: 10rem;
       height: 100%;
       margin: 0.3rem;
-
       opacity: 1;
       cursor: pointer;
     }
