@@ -155,14 +155,12 @@ window.onload = function () {
   const thumbnailsCarousel = document.querySelector(".carousel-thumbnails");
   const thumbnailImages = document.querySelectorAll(".thumbnail-img");
 
-  console.log(thumbnailImages);
+  let index = 4;
+  const thumbnailImagesArray = Array.from(thumbnailImages);
+  console.log(thumbnailImagesArray);
 
-  let index = 0;
-
-  function handleArrowBehavior(icon) {
-    if (icon.classList.contains("show-image")) {
-      icon.classList.remove("show-image");
-    } else if (icon.id === "left" && index > 0) {
+  function handleArrowAction(icon) {
+    if (icon.id === "left" && index > 0) {
       index--;
     } else if (icon.id === "left" && index === 0) {
       index = 9;
@@ -173,24 +171,36 @@ window.onload = function () {
       index = 0;
       index * 2;
     }
+    console.log(index);
+    console.log(icon.id);
     handleDisplayImage(index);
+    // handleActivateThumbnail(index);
   }
 
   function handleDisplayImage(currentIndex) {
-    images.forEach((image, index) =>
-      index === currentIndex
-        ? image.classList.add("show-image")
-        : image.classList.remove("show-image")
-    ) &&
-      thumbnailImages.forEach((image, index) =>
-        index === currentIndex
-          ? image.classList.add("thumbnail-active")
-          : image.classList.remove("thumbnail-active")
-      );
+    images.forEach((image, index) => {
+      if (currentIndex === index) {
+        image.classList.add("show-image"), handleActivateThumbnail(index);
+      } else {
+        image.classList.remove("show-image");
+      }
+    });
   }
 
+  function handleActivateThumbnail(currentIndex) {
+    thumbnailImages.forEach((thumbnail, index) =>
+      currentIndex === index
+        ? thumbnail.classList.remove("thumbnail-disabled")
+        : thumbnail.classList.add("thumbnail-disabled")
+    );
+  }
+
+  thumbnailImagesArray.forEach((thumbnail, thumbnailIndex) =>
+    thumbnail.addEventListener("click", () => (index = thumbnailIndex) && handleDisplayImage(index))
+  );
+
   arrowIcons.forEach((icon) => {
-    icon.addEventListener("click", () => handleArrowBehavior(icon));
+    icon.addEventListener("click", () => handleArrowAction(icon));
   });
 
   document.addEventListener("click", (e) => {
