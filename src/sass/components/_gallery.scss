@@ -14,7 +14,7 @@
   height: 100vh;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.8);
-  clip-path: circle(150% at 50% 40%);
+  clip-path: circle(0% at 50% 40%);
   transition: clip-path 0.8s;
   transition-delay: 50ms;
 }
@@ -28,7 +28,7 @@
   align-items: center;
   width: 40rem;
   height: 45rem;
- 
+
   .carousel {
     position: relative;
     display: flex;
@@ -60,13 +60,11 @@
     scroll-snap-align: center;
   }
   .show-image {
-    right: 0;
-    z-index: 1001;
     opacity: 1;
   }
 
-  .arrow-outer,
-  .arrow-inner {
+  .arrow-outer {
+    padding: 2rem;
     color: #fff;
     font-size: 4.5rem;
     margin: 0.5rem;
@@ -74,13 +72,10 @@
     border-radius: 0.5rem;
     padding: 0.2rem;
     transition: scale 0.3s, background-color 0.3s, color 0.8s;
-  }
-  .arrow-inner {
-    display: none;
+    z-index: 1000;
   }
 
-  .arrow-outer:hover,
-  .arrow-inner:hover {
+  .arrow-outer:hover {
     scale: 0.9;
     background-color: rgba(251, 251, 251, 0.848);
     color: c.$black-basic;
@@ -89,8 +84,7 @@
 
 .carousel-thumbnails-wrapper {
   width: 31.5rem;
-  height: 100%;
-  
+  height: 10rem;
 
   .carousel-thumbnails {
     display: flex;
@@ -102,7 +96,7 @@
     margin-top: 1em;
     background-color: transparent;
     overflow: hidden;
-  
+
     .thumbnail-img {
       border-radius: 0.4em;
       width: 10rem;
@@ -119,44 +113,46 @@
   }
 }
 
-@media (width < 576px) {
-  .img {
-    border: none;
-    width: 100%;
+@media (1000px < width< 1200px) {
+  .carousel-wrapper {
+    width: 80rem;
+    min-height: 100rem;
   }
+
+  .carousel-thumbnails-wrapper {
+    width: 50rem;
+    height: 18rem;
+    .carousel-thumbnails {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+@media (600px < width < 999px) {
+  .carousel-wrapper {
+    width: 52rem;
+    height: 60rem;
+  }
+}
+@media (width < 576px) {
   .gallery {
     display: flex;
     align-items: center;
     justify-content: center;
+    .carousel-wrapper {
+      width: 100%;
+      .img {
+        width: 30rem;
+      }
+    }
+    .carousel {
+      position: relative;
+    }
   }
-  .carousel-wrapper {
-    width: 100%;
-  }
-
   .carousel-thumbnails {
     display: inline-flex;
     z-index: 10000;
     min-height: 6em;
     width: 100%;
-  }
-
-
-  .arrow-outer {
-    display: none;
-  }
-  .arrow-inner {
-    display: flex;
-    justify-content: space-between;
-    z-index: 10000;
-
-    // width: 100%;
-  }
-  .left-btn {
-    position: fixed;
-    left: 0;
-  }
-  .right-btn {
-    position: fixed;
-    right: 0;
   }
 }

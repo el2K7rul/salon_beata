@@ -123,35 +123,39 @@ window.onload = function () {
   const thumbnailsCarousel = document.querySelector(".carousel-thumbnails");
   const thumbnailImages = document.querySelectorAll(".thumbnail-img");
 
-  let index = 2;
+  let index = 0;
 
   function handleArrowAction(icon) {
-    handleSwipeThumbnails(icon)
     if(icon.id === "left" && index > 0) {
       index--;
     } else if (icon.id === "left" && index === 0) {
-      index = 9;
+      index = thumbnailImages.length-1;
       index--;
-    } else if (icon.id === "right" && index < 8) {
+    } else if (icon.id === "right" && index < thumbnailImages.length-1) {
       index++;
     } else {
       index = 0;
     }
-
+    
     handleDisplayImage(index);
+    handleSwipeThumbnails(icon, index)
+    console.log(thumbnailImages.length);
     console.log(index);
-    console.log(icon.id);
+    // console.log(index);
+    // console.log(icon.id);
   }
 
-  function handleSwipeThumbnails(icon){
-    if(icon.id === 'left'){
+  function handleSwipeThumbnails(icon, index){
+    l = (thumbnailImages.length - 3);
+
+    if(icon.id === 'left', index === 1){  
       thumbnailsCarousel.scroll(
         {
           top: 0,
           left: -78.75,
           behavior: 'smooth'
         });
-    } else if(icon.id === 'right'){
+    } else if(icon.id === 'right', index === l){
       thumbnailsCarousel.scroll(
         {
           top: 0,
