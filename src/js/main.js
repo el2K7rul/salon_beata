@@ -126,42 +126,38 @@ window.onload = function () {
   let index = 0;
 
   function handleArrowAction(icon) {
-    if(icon.id === "left" && index > 0) {
+    // handleSwipeThumbnails(icon, index);
+    if (icon.id === "left" && index > 0) {
       index--;
     } else if (icon.id === "left" && index === 0) {
-      index = thumbnailImages.length-1;
+      index = thumbnailImages.length - 1;
       index--;
-    } else if (icon.id === "right" && index < thumbnailImages.length-1) {
+    } else if (icon.id === "right" && index < thumbnailImages.length - 1) {
       index++;
     } else {
       index = 0;
     }
-    
+
+    handleSwipeThumbnails(icon, index);
     handleDisplayImage(index);
-    handleSwipeThumbnails(icon, index)
-    console.log(thumbnailImages.length);
-    console.log(index);
-    // console.log(index);
-    // console.log(icon.id);
+    console.log(`index post: ${index}`);
   }
 
-  function handleSwipeThumbnails(icon, index){
-    l = (thumbnailImages.length - 3);
+  function handleSwipeThumbnails(icon, index) {
+    l = 2;
 
-    if(icon.id === 'left', index === 1){  
-      thumbnailsCarousel.scroll(
-        {
-          top: 0,
-          left: -78.75,
-          behavior: 'smooth'
-        });
-    } else if(icon.id === 'right', index === l){
-      thumbnailsCarousel.scroll(
-        {
-          top: 0,
-          left: 78.75,
-          behavior: 'smooth'
-        });
+    if ((icon.id === "left") === l) {
+      thumbnailsCarousel.scroll({
+        top: 0,
+        left: -78.75,
+        behavior: "smooth",
+      });
+    } else if ((icon.id === "right", index === l)) {
+      thumbnailsCarousel.scroll({
+        top: 0,
+        left: 78.75,
+        behavior: "smooth",
+      });
     }
   }
 
@@ -212,3 +208,23 @@ window.onload = function () {
     }
   });
 };
+
+//---------------------------------fadeIN anim ---------------
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
+
+const hiddenElementsLeft = document.querySelectorAll(".hidden");
+const hiddenElementsRight = document.querySelectorAll(".hidden-right");
+const hiddenVanishedElements = document.querySelectorAll(".hidden-vanished");
+hiddenElementsLeft.forEach((el) => observer.observe(el));
+hiddenElementsRight.forEach((el) => observer.observe(el));
+hiddenVanishedElements.forEach((el) => observer.observe(el));

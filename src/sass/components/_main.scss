@@ -32,6 +32,7 @@
       padding-right: 4rem;
       background-color: c.$black-basic;
       color: c.$white-light;
+
       &--heading {
         font-size: 4rem;
         letter-spacing: 0.6rem;
@@ -55,11 +56,7 @@
       &--small {
         width: 100%;
         max-height: 50rem;
-        // display: none;
       }
-      // &--big {
-      //   display: none;
-      // }
     }
     &__text {
       display: flex;
@@ -86,6 +83,7 @@
       }
     }
   }
+
   .offer-cards,
   .price-list {
     display: flex;
@@ -95,25 +93,28 @@
     width: 100%;
     padding-bottom: 5rem;
     color: c.$white-light;
+    color: black;
     background-color: c.$black-basic;
+    background-color: c.$white-light;
 
     &__text {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      width: 60%;
-      margin-top: 5rem;
-      margin-bottom: 4.5rem;
-
-      &--content {
-        width: 100%;
-      }
+      align-items: center;
+      width: 100%;
+      padding: 2rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      padding-bottom: 10rem;
+      background-color: c.$black-basic;
+      color: c.$white-light;
 
       &--heading {
         font-size: 4rem;
         letter-spacing: 0.6rem;
         padding-top: 2rem;
+        padding-bottom: 2rem;
         font-family: "Oswald", sans-serif;
       }
       &--heading::first-letter {
@@ -126,6 +127,9 @@
       flex-wrap: wrap;
       justify-content: center;
       width: 100%;
+      max-width: 80rem;
+      padding: 5rem;
+      background-color: c.$white-light;
     }
   }
   .offer-cards__card {
@@ -137,7 +141,8 @@
     background-position: center;
     background-size: 100% 100%;
     text-align: center;
-    box-shadow: 2px 2px 8px rgba(126, 126, 126, 0.732);
+    padding: 5rem;
+    box-shadow: 2px 2px 8px rgba(57, 57, 57, 0.914);
 
     &--text {
       position: absolute;
@@ -207,16 +212,28 @@
   }
 
   .one {
-    background-image: url("/assets/scisorssmall.webp");
+    background-image: url("/dist/img/haircut4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .two {
-    background-image: url("/assets/colorbig.jpg");
-  }
-  .four {
-    background-image: url("/assets/haistylingbiggold.webp");
+    background-image: url("/dist/img/stockcake/hair_colorization3_best.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .three {
-    background-image: url("/assets/shaverbiggold.webp");
+    background-image: url("/dist/img/stockcake/shaving_brush_set.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .four {
+    background-image: url("/dist/img/stockcake/hair_styling_pic.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -280,6 +297,37 @@
       width: 100%;
       margin: 1rem 0 1rem 0;
     }
+  }
+}
+
+.hidden {
+  transform: translateX(-100%);
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 1s;
+}
+.hidden-right {
+  transform: translateX(100%);
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 1s;
+}
+.hidden-vanished {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 0.5s;
+}
+.show {
+  transform: translateX(0);
+  filter: blur(0);
+  opacity: 1;
+}
+// -------------------- keyframes -------------------
+
+@keyframes slideIn {
+  to {
+    scale: 1;
+    opacity: 1;
   }
 }
 

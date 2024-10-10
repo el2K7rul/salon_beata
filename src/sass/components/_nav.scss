@@ -69,7 +69,7 @@
   transform: translateX(100%);
   transition: transform 0.3s;
   border-radius: 5px;
-  z-index: 1;
+  z-index: 3;
   &__link {
     text-decoration: none;
     color: c.$black-basic;
@@ -158,7 +158,7 @@
     justify-content: center;
     width: 80%;
     height: 80%;
-    border: 1px solid c.$gold-dark;
+    border: 2px solid black;
     border-radius: 5px;
     &__logo {
       position: absolute;
@@ -255,7 +255,13 @@
   }
 }
 
-@media (768px < width < 1199px) {
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+@media (920px < width < 1199px) {
   .burger {
     display: none;
   }
