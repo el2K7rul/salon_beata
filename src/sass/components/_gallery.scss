@@ -1,6 +1,6 @@
 @use "../utilities/colors" as c;
 
-.gallery {
+.gallery-haircut {
   position: fixed;
   top: 0;
   left: 0;
@@ -78,7 +78,7 @@
   .arrow-outer:hover {
     scale: 0.9;
     background-color: rgba(251, 251, 251, 0.848);
-    color: c.$black-basic;
+    color: c.$black-main;
   }
 }
 
@@ -135,7 +135,7 @@
   }
 }
 @media (width < 576px) {
-  .gallery {
+  .gallery-haircut {
     display: flex;
     align-items: center;
     justify-content: center;

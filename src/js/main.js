@@ -117,7 +117,7 @@ window.onload = function () {
   const workBtnTwo = document.querySelector(".btn-two");
   const workBtnThree = document.querySelector(".btn-three");
   const workBtnFour = document.querySelector(".btn-four");
-  const gallery = document.querySelector(".gallery");
+  const haircutGallery = document.querySelector(".gallery-haircut");
   const images = carousel.querySelectorAll(".img");
   const arrowIcons = document.querySelectorAll(".arrow");
   const thumbnailsCarousel = document.querySelector(".carousel-thumbnails");
@@ -194,7 +194,7 @@ window.onload = function () {
       (e.target.classList.contains("gallery") && body.classList.contains("disable-scroll")) ||
       body.classList.contains("carousel")
     ) {
-      gallery.classList.remove("display-gallery");
+      haircutGallery.classList.remove("display-gallery");
       body.classList.remove("disable-scroll");
       navDesktop.classList.remove("nav-transition");
     }
@@ -203,7 +203,7 @@ window.onload = function () {
   workBtnOne.addEventListener("click", () => {
     {
       body.classList.add("disable-scroll");
-      gallery.classList.add("display-gallery");
+      haircutGallery.classList.add("display-gallery");
       navDesktop.classList.add("nav-transition");
     }
   });
@@ -213,11 +213,8 @@ window.onload = function () {
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry);
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
     }
   });
 });
