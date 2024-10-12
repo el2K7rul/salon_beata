@@ -1,30 +1,31 @@
 window.onload = function () {
   //selectors
+  const body = document.querySelector(".body");
   const burger = document.querySelector(".burger");
   const allBurgerBars = document.querySelectorAll(".burger__bars");
-  const body = document.querySelector(".body");
   const navMobile = document.querySelector(".nav");
   const navDesktop = document.querySelector(".nav-desktop");
   const allNavLinks = document.querySelectorAll(".nav-mobile__link");
   const arrowUp = document.querySelector(".arrowup");
+
   const footerDate = document.querySelector(".footer__bottom--date");
   const allSections = document.querySelectorAll(".section");
   const errorMsg = document.querySelector(".error-msg");
   const errorMsgTel = document.querySelector(".error-msg-tel");
   const email = document.querySelector(".email");
   const telNum = document.querySelector(".telNum");
-
   const submitBtn = document.querySelector(".submit");
 
-  //variables
+  // footer
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
-
-  //functions
 
   const handleFooterYear = () => {
     footerDate.textContent = currentYear.toString();
   };
+
+  handleFooterYear();
+  // NAV
 
   const handleNav = () => {
     navMobile.classList.toggle("active");
@@ -68,6 +69,11 @@ window.onload = function () {
     handleArrowUp();
   };
 
+  window.addEventListener("scroll", handleObserver);
+  burger.addEventListener("click", handleNav);
+
+  // form validator
+
   const checkTelNum = (telNum) => {
     const validNum = /^[0-9\+]{8,13}$/;
 
@@ -100,15 +106,11 @@ window.onload = function () {
   };
 
   // event listeners
-  window.addEventListener("scroll", handleObserver);
-  burger.addEventListener("click", handleNav);
   submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
     checkMail(email);
     checkTelNum(telNum);
   });
-
-  handleFooterYear();
 
   // ------------- GALLERY -----------------------------------
 
