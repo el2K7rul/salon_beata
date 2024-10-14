@@ -47,7 +47,6 @@ window.onload = function () {
     } else {
       arrowUp.classList.remove("active");
     }
-    
   };
 
   const handleObserver = () => {
@@ -69,7 +68,7 @@ window.onload = function () {
     handleArrowUp();
   };
 
-  window.addEventListener("scroll",handleObserver);
+  window.addEventListener("scroll", handleObserver);
   burger.addEventListener("click", handleNav);
 
   // form validator
@@ -119,78 +118,86 @@ window.onload = function () {
   const workBtnTwo = document.querySelector(".btn-two");
   const workBtnThree = document.querySelector(".btn-three");
   const workBtnFour = document.querySelector(".btn-four");
-  const haircutGallery = document.querySelector(".gallery-haircut");
+  const haircutGalleryThumbnail = document.querySelectorAll(".thumbnail-img");
   const colorGallery = document.querySelector(".gallery-color");
+  const barberGallery = document.querySelector(".gallery-barber");
+  const styleGallery = document.querySelector(".gallery-style");
   const images = carousel.querySelectorAll(".img");
   const arrowIcons = document.querySelectorAll(".arrow");
-  const thumbnailsCarousel = document.querySelector(".carousel-thumbnails");
-  const thumbnailImages = document.querySelectorAll(".thumbnail-img");
+
+  // const gallery = [
+  //   {
+  //     id: 0,
+  //     url: "/img/haircut/haircut(1).jpg",
+  //     chapter: "haircut",
+  //   },
+  //   {
+  //     id: 1,
+  //     url: "src/img/haircut/haircut(1).jpg",
+  //     chapter: "haircut",
+  //   },
+  //   {
+  //     id: 2,
+  //     url: ".",
+  //     chapter: "haircut",
+  //   },
+  //   {
+  //     id: 3,
+  //     url: ".",
+  //     chapter: "haircut",
+  //   },
+  //   {
+  //     id: 4,
+  //     url: ".",
+  //     chapter: "haircut",
+  //   },
+  // ];
 
   let index = 0;
 
+  // console.log(haircutGallery.length);
+
   function handleArrowAction(icon) {
-    // handleSwipeThumbnails(icon, index);
-    if (icon.id === "left" && index >= 0) {
-      index = haircutGallery.length - 1;
-    } else if (icon.id === "left" && index === 0) {
-      index = thumbnailImages.length - 1;
-      index--;
-    } else if (icon.id === "right" && index < thumbnailImages.length - 1) {
-      index++;
+    if (icon.classList.contains("left-btn")) {
+      console.log("left");
+    } else if (icon.classList.contains("right-btn")) {
+      console.log("right");
+    }
+  }
+
+  const createImage = (thumbnail, index) => {
+    const img = document.createElement("img");
+    img.src = thumbnail.src;
+    img.id = index;
+    img.classList.add("img");
+    carousel.appendChild(img);
+    setTimeout(() => {
+      img.classList.add("show-image");
+    }, 1);
+  };
+
+  function handleDisplayImage(thumbnail, index) {
+    if (carousel.childElementCount === 0) {
+      createImage(thumbnail, index);
     } else {
-      index = 0;
+      thumbnail.classList.remove("show-image");
+      carousel.removeChild(carousel.firstElementChild);
+      createImage(thumbnail, index);
     }
-
-    handleSwipeThumbnails(icon, index);
-    handleDisplayImage(index);
-    console.log(`index post: ${index}`);
-  }
-
-  function handleSwipeThumbnails(icon, index) {
-    l = 2;
-
-    if ((icon.id === "left") === l) {
-      thumbnailsCarousel.scroll({
-        top: 0,
-        left: -78.75,
-        behavior: "smooth",
-      });
-    } else if ((icon.id === "right", index === l)) {
-      thumbnailsCarousel.scroll({
-        top: 0,
-        left: 78.75,
-        behavior: "smooth",
-      });
-    }
-  }
-
-  function handleDisplayImage(currentIndex) {
-    images.forEach((image, index) => {
-      if (currentIndex === index) {
-        image.classList.add("show-image"), handleActivateThumbnail(index);
-      } else {
-        image.classList.remove("show-image");
-      }
-    });
-  }
-
-  function handleActivateThumbnail(currentIndex) {
-    thumbnailImages.forEach((thumbnail, index) =>
-      currentIndex === index
-        ? thumbnail.classList.remove("thumbnail-disabled")
-        : thumbnail.classList.add("thumbnail-disabled")
-    );
   }
 
   // event listeners -------------------------------------------------------------------
 
-  thumbnailImages.forEach((thumbnail, thumbnailIndex) =>
-    thumbnail.addEventListener("click", () => (index = thumbnailIndex) && handleDisplayImage(index))
-  );
-
   arrowIcons.forEach((icon) => {
     icon.addEventListener("click", () => handleArrowAction(icon));
   });
+
+  haircutGalleryThumbnail.forEach((thumbnail, index) =>
+    thumbnail.addEventListener("click", () => {
+      handleDisplayImage(thumbnail, index);
+      thumbnail.classList.remove("thumbnail-disabled");
+    })
+  );
 
   document.addEventListener("click", (e) => {
     if (
