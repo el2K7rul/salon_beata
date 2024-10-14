@@ -61,7 +61,7 @@ window.onload = function () {
         allBurgerBars.forEach((bar) => bar.classList.add("white-burger"));
       } else if (
         section.classList.contains("white-section") &&
-        section.offsetTop <= currentSection + 30
+        section.offsetTop <= currentSection + 100
       ) {
         allBurgerBars.forEach((bar) => bar.classList.remove("white-burger"));
       }
@@ -120,6 +120,7 @@ window.onload = function () {
   const workBtnThree = document.querySelector(".btn-three");
   const workBtnFour = document.querySelector(".btn-four");
   const haircutGallery = document.querySelector(".gallery-haircut");
+  const colorGallery = document.querySelector(".gallery-color");
   const images = carousel.querySelectorAll(".img");
   const arrowIcons = document.querySelectorAll(".arrow");
   const thumbnailsCarousel = document.querySelector(".carousel-thumbnails");
@@ -129,8 +130,8 @@ window.onload = function () {
 
   function handleArrowAction(icon) {
     // handleSwipeThumbnails(icon, index);
-    if (icon.id === "left" && index > 0) {
-      index--;
+    if (icon.id === "left" && index >= 0) {
+      index = haircutGallery.length - 1;
     } else if (icon.id === "left" && index === 0) {
       index = thumbnailImages.length - 1;
       index--;
