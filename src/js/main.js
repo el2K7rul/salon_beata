@@ -47,7 +47,7 @@ window.onload = function () {
     } else {
       arrowUp.classList.remove("active");
     }
-    // console.log(window.scrollY);
+    
   };
 
   const handleObserver = () => {
@@ -69,7 +69,7 @@ window.onload = function () {
     handleArrowUp();
   };
 
-  window.addEventListener("scroll", handleObserver);
+  window.addEventListener("scroll",handleObserver);
   burger.addEventListener("click", handleNav);
 
   // form validator
