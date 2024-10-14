@@ -125,38 +125,6 @@ window.onload = function () {
   const images = carousel.querySelectorAll(".img");
   const arrowIcons = document.querySelectorAll(".arrow");
 
-  // const gallery = [
-  //   {
-  //     id: 0,
-  //     url: "/img/haircut/haircut(1).jpg",
-  //     chapter: "haircut",
-  //   },
-  //   {
-  //     id: 1,
-  //     url: "src/img/haircut/haircut(1).jpg",
-  //     chapter: "haircut",
-  //   },
-  //   {
-  //     id: 2,
-  //     url: ".",
-  //     chapter: "haircut",
-  //   },
-  //   {
-  //     id: 3,
-  //     url: ".",
-  //     chapter: "haircut",
-  //   },
-  //   {
-  //     id: 4,
-  //     url: ".",
-  //     chapter: "haircut",
-  //   },
-  // ];
-
-  let index = 0;
-
-  // console.log(haircutGallery.length);
-
   function handleArrowAction(icon) {
     if (icon.classList.contains("left-btn")) {
       console.log("left");
@@ -186,6 +154,14 @@ window.onload = function () {
     }
   }
 
+  function handleActivateThumbnail(currentIndex) {
+    haircutGalleryThumbnail.forEach((thumbnail, index) =>
+      currentIndex === index
+        ? thumbnail.classList.remove("thumbnail-disabled")
+        : thumbnail.classList.add("thumbnail-disabled")
+    );
+  }
+
   // event listeners -------------------------------------------------------------------
 
   arrowIcons.forEach((icon) => {
@@ -195,7 +171,7 @@ window.onload = function () {
   haircutGalleryThumbnail.forEach((thumbnail, index) =>
     thumbnail.addEventListener("click", () => {
       handleDisplayImage(thumbnail, index);
-      thumbnail.classList.remove("thumbnail-disabled");
+      handleActivateThumbnail(index);
     })
   );
 
