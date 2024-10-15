@@ -128,10 +128,10 @@ window.onload = function () {
   let index = 0;
 
   function handleArrowAction(icon) {
-    if (icon.id === "left" && index >= 0) {
-      index = haircutGallery.length - 1;
-    } else if (icon.id === "left" && index === 0) {
-      index = thumbnailImages.length - 1;
+    if (icon.id === "left" && index === 0) {
+      index = thumbnailImages.length;
+      index--;
+    } else if (icon.id === "left" && index > 0) {
       index--;
     } else if (icon.id === "right" && index < thumbnailImages.length - 1) {
       index++;
@@ -181,7 +181,9 @@ window.onload = function () {
   // event listeners -------------------------------------------------------------------
 
   thumbnailImages.forEach((thumbnail, thumbnailIndex) =>
-    thumbnail.addEventListener("click", () => (index = thumbnailIndex) && handleDisplayImage(index))
+    thumbnail.addEventListener("click", () => {
+      (index = thumbnailIndex), handleDisplayImage(index);
+    })
   );
 
   arrowIcons.forEach((icon) => {
