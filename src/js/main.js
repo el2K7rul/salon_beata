@@ -117,9 +117,10 @@ window.onload = function () {
   const workBtns = document.querySelectorAll(".work-btn");
 
   const arrowIcons = document.querySelectorAll(".arrow");
-
+  const galleries = document.querySelectorAll(".gallery");
   const haircutGallery = document.getElementById("haircut");
   const colorGallery = document.getElementById("color");
+  const barberGallery = document.getElementById("barber");
 
   const images = carousel.querySelectorAll(".img");
   const thumbnailImages = document.querySelectorAll(".thumbnail-img");
@@ -144,20 +145,19 @@ window.onload = function () {
   function handleWorkBtn(btn) {
     if (btn.id === "btn-one") {
       console.log("clicked one");
-      {
-        body.classList.add("disable-scroll");
-        haircutGallery.classList.add("display-gallery");
-        navDesktop.classList.add("nav-transition");
-      }
+      body.classList.add("disable-scroll");
+      haircutGallery.classList.add("display-gallery");
+      navDesktop.classList.add("nav-transition");
     } else if (btn.id === "btn-two") {
       console.log("clicked two");
-      {
-        body.classList.add("disable-scroll");
-        colorGallery.classList.add("display-gallery");
-        navDesktop.classList.add("nav-transition");
-      }
+      body.classList.add("disable-scroll");
+      colorGallery.classList.add("display-gallery");
+      navDesktop.classList.add("nav-transition");
     } else if (btn.id === "btn-three") {
       console.log("clicked three");
+      body.classList.add("disable-scroll");
+      barberGallery.classList.add("display-gallery");
+      navDesktop.classList.add("nav-transition");
     } else {
       console.log("clicked four");
     }
@@ -217,7 +217,8 @@ window.onload = function () {
       (e.target.classList.contains("gallery") && body.classList.contains("disable-scroll")) ||
       body.classList.contains("carousel")
     ) {
-      haircutGallery.classList.remove("display-gallery");
+      galleries.forEach((gallery) => gallery.classList.remove("display-gallery"));
+      // gallery.classList.remove("display-gallery");
       body.classList.remove("disable-scroll");
       navDesktop.classList.remove("nav-transition");
     }
