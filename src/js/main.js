@@ -145,7 +145,7 @@ console.log(images);
       
     } else if (btn.id === "btn-three") {
       let startIndex=8;
-      let endIndex=10;
+      let endIndex=11;
       handleDisplayGallery(barberGallery)
       handleArrowAction(startIndex, endIndex);
       

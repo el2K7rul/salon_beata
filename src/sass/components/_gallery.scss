@@ -116,24 +116,14 @@
 @media (1000px < width< 1200px) {
   .carousel-wrapper {
     width: 80rem;
-    min-height: 100rem;
-  }
-
-  .carousel-thumbnails-wrapper {
-    width: 50rem;
-    height: 18rem;
-    .carousel-thumbnails {
-      width: 100%;
-      height: 100%;
+    height: 45rem;
+    .img {
+      width: 30rem;
     }
   }
+
 }
-@media (600px < width < 999px) {
-  .carousel-wrapper {
-    width: 52rem;
-    height: 60rem;
-  }
-}
+
 @media (width < 576px) {
   .gallery-haircut {
     display: flex;

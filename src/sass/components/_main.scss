@@ -445,3 +445,16 @@
     }
   }
 }
+
+@media (width < 370px){
+  .price-list{
+    &__container{
+      margin: 2rem;
+    }
+    &__box{
+      padding-left: 0;
+    }
+  }
+  
+  
+}

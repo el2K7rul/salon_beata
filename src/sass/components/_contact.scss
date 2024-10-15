@@ -178,9 +178,10 @@
         background: c.$black-main;
         color: c.$white-light;
         transition: color 0.3s, background-color 0.3s, border 0.3s, font-weight 0.3s,
-          letter-spacing 0.3s;
+        letter-spacing 0.3s;
         &:hover {
           letter-spacing: 0.15rem;
+          color: c.$gold-light;
         }
 
         &::before {
@@ -192,7 +193,7 @@
           height: 100%;
           border: 1px solid c.$gold-dark;
           opacity: 0;
-          // transition: opacity 0.3s, scale 0.3s;
+    
         }
         &:hover::before {
           animation: pulse2 1s;
