@@ -114,32 +114,53 @@ window.onload = function () {
   // ------------- GALLERY -----------------------------------
 
   const carousel = document.querySelector(".carousel");
-  const workBtnOne = document.querySelector(".btn-one");
-  const workBtnTwo = document.querySelector(".btn-two");
-  const workBtnThree = document.querySelector(".btn-three");
-  const workBtnFour = document.querySelector(".btn-four");
-  const haircutGallery = document.querySelector(".gallery-haircut");
-  const colorGallery = document.querySelector(".gallery-color");
-  const images = carousel.querySelectorAll(".img");
+  const workBtns = document.querySelectorAll(".work-btn");
+
   const arrowIcons = document.querySelectorAll(".arrow");
-  const thumbnailsCarousel = document.querySelector(".carousel-thumbnails");
+
+  const haircutGallery = document.getElementById("haircut");
+  const colorGallery = document.getElementById("color");
+
+  const images = carousel.querySelectorAll(".img");
   const thumbnailImages = document.querySelectorAll(".thumbnail-img");
 
   let index = 0;
 
   function handleArrowAction(icon) {
     if (icon.id === "left" && index === 0) {
-      index = thumbnailImages.length;
+      index = 4;
       index--;
     } else if (icon.id === "left" && index > 0) {
       index--;
-    } else if (icon.id === "right" && index < thumbnailImages.length - 1) {
+    } else if (icon.id === "right" && index < 3) {
       index++;
     } else {
       index = 0;
     }
     handleDisplayImage(index);
     console.log(`index post: ${index}`);
+  }
+
+  function handleWorkBtn(btn) {
+    if (btn.id === "btn-one") {
+      console.log("clicked one");
+      {
+        body.classList.add("disable-scroll");
+        haircutGallery.classList.add("display-gallery");
+        navDesktop.classList.add("nav-transition");
+      }
+    } else if (btn.id === "btn-two") {
+      console.log("clicked two");
+      {
+        body.classList.add("disable-scroll");
+        colorGallery.classList.add("display-gallery");
+        navDesktop.classList.add("nav-transition");
+      }
+    } else if (btn.id === "btn-three") {
+      console.log("clicked three");
+    } else {
+      console.log("clicked four");
+    }
   }
 
   // function handleSwipeThumbnails(icon, index) {
@@ -179,6 +200,7 @@ window.onload = function () {
   }
 
   // event listeners -------------------------------------------------------------------
+  workBtns.forEach((btn) => btn.addEventListener("click", () => handleWorkBtn(btn)));
 
   thumbnailImages.forEach((thumbnail, thumbnailIndex) =>
     thumbnail.addEventListener("click", () => {
@@ -201,28 +223,20 @@ window.onload = function () {
     }
   });
 
-  workBtnOne.addEventListener("click", () => {
-    {
-      body.classList.add("disable-scroll");
-      haircutGallery.classList.add("display-gallery");
-      navDesktop.classList.add("nav-transition");
-    }
+  //---------------------------------fadeIN anim ---------------
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
   });
+
+  const hiddenElementsLeft = document.querySelectorAll(".hidden");
+  const hiddenElementsRight = document.querySelectorAll(".hidden-right");
+  const hiddenVanishedElements = document.querySelectorAll(".hidden-vanished");
+  hiddenElementsLeft.forEach((el) => observer.observe(el));
+  hiddenElementsRight.forEach((el) => observer.observe(el));
+  hiddenVanishedElements.forEach((el) => observer.observe(el));
 };
-
-//---------------------------------fadeIN anim ---------------
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-});
-
-const hiddenElementsLeft = document.querySelectorAll(".hidden");
-const hiddenElementsRight = document.querySelectorAll(".hidden-right");
-const hiddenVanishedElements = document.querySelectorAll(".hidden-vanished");
-hiddenElementsLeft.forEach((el) => observer.observe(el));
-hiddenElementsRight.forEach((el) => observer.observe(el));
-hiddenVanishedElements.forEach((el) => observer.observe(el));
