@@ -14,7 +14,7 @@
   height: 100vh;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.8);
-  clip-path: circle(0% at 50% 40%);
+  clip-path: circle(150% at 50% 40%);
   transition: clip-path 0.8s;
   transition-delay: 50ms;
 }

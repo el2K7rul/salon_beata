@@ -47,7 +47,6 @@ window.onload = function () {
     } else {
       arrowUp.classList.remove("active");
     }
-    
   };
 
   const handleObserver = () => {
@@ -69,7 +68,7 @@ window.onload = function () {
     handleArrowUp();
   };
 
-  window.addEventListener("scroll",handleObserver);
+  window.addEventListener("scroll", handleObserver);
   burger.addEventListener("click", handleNav);
 
   // form validator
@@ -129,7 +128,6 @@ window.onload = function () {
   let index = 0;
 
   function handleArrowAction(icon) {
-    // handleSwipeThumbnails(icon, index);
     if (icon.id === "left" && index >= 0) {
       index = haircutGallery.length - 1;
     } else if (icon.id === "left" && index === 0) {
@@ -140,29 +138,27 @@ window.onload = function () {
     } else {
       index = 0;
     }
-
-    handleSwipeThumbnails(icon, index);
     handleDisplayImage(index);
     console.log(`index post: ${index}`);
   }
 
-  function handleSwipeThumbnails(icon, index) {
-    l = 2;
+  // function handleSwipeThumbnails(icon, index) {
+  //   l = 2;
 
-    if ((icon.id === "left") === l) {
-      thumbnailsCarousel.scroll({
-        top: 0,
-        left: -78.75,
-        behavior: "smooth",
-      });
-    } else if ((icon.id === "right", index === l)) {
-      thumbnailsCarousel.scroll({
-        top: 0,
-        left: 78.75,
-        behavior: "smooth",
-      });
-    }
-  }
+  //   if ((icon.id === "left") === l) {
+  //     thumbnailsCarousel.scroll({
+  //       top: 0,
+  //       left: -78.75,
+  //       behavior: "smooth",
+  //     });
+  //   } else if ((icon.id === "right", index === l)) {
+  //     thumbnailsCarousel.scroll({
+  //       top: 0,
+  //       left: 78.75,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // }
 
   function handleDisplayImage(currentIndex) {
     images.forEach((image, index) => {
