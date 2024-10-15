@@ -121,70 +121,77 @@ window.onload = function () {
   const haircutGallery = document.getElementById("haircut");
   const colorGallery = document.getElementById("color");
   const barberGallery = document.getElementById("barber");
+  const styleGallery = document.getElementById("style");
 
-  const images = carousel.querySelectorAll(".img");
+  const images = document.querySelectorAll(".img");
   const thumbnailImages = document.querySelectorAll(".thumbnail-img");
 
-  let index = 0;
-
-  function handleArrowAction(icon) {
-    if (icon.id === "left" && index === 0) {
-      index = 4;
-      index--;
-    } else if (icon.id === "left" && index > 0) {
-      index--;
-    } else if (icon.id === "right" && index < 3) {
-      index++;
-    } else {
-      index = 0;
-    }
-    handleDisplayImage(index);
-    console.log(`index post: ${index}`);
-  }
-
+  
+console.log(images);
   function handleWorkBtn(btn) {
+    
     if (btn.id === "btn-one") {
-      console.log("clicked one");
-      body.classList.add("disable-scroll");
-      haircutGallery.classList.add("display-gallery");
-      navDesktop.classList.add("nav-transition");
+      let startIndex=0;
+      let endIndex=3;
+      
+      handleDisplayGallery(haircutGallery),
+      handleArrowAction(startIndex, endIndex);
+      
     } else if (btn.id === "btn-two") {
-      console.log("clicked two");
-      body.classList.add("disable-scroll");
-      colorGallery.classList.add("display-gallery");
-      navDesktop.classList.add("nav-transition");
+      let startIndex=4;
+      let endIndex=7;
+      handleDisplayGallery(colorGallery)
+      handleArrowAction(startIndex, endIndex);
+      
     } else if (btn.id === "btn-three") {
-      console.log("clicked three");
-      body.classList.add("disable-scroll");
-      barberGallery.classList.add("display-gallery");
-      navDesktop.classList.add("nav-transition");
-    } else {
-      console.log("clicked four");
+      let startIndex=8;
+      let endIndex=10;
+      handleDisplayGallery(barberGallery)
+      handleArrowAction(startIndex, endIndex);
+      
+    } else if(btn.id === 'btn-four') {
+      
+      handleDisplayGallery(styleGallery)
+      handleArrowAction(startIndex, endIndex);
     }
   }
 
-  // function handleSwipeThumbnails(icon, index) {
-  //   l = 2;
+  function handleArrowAction(startIndex, endIndex) {
+    let index = startIndex;
+    arrowIcons.forEach((icon) => icon.addEventListener('click', 
+      ()=> {
+        if (icon.id === "left" && index === startIndex) {
+          index = endIndex + 1;
+          index--;
+        } else if (icon.id === "left" && index > startIndex) {
+          index--;
+        } else if (icon.id === "right" && index < endIndex) {
+          index++;
+        } else {
+          index = startIndex;
+        }
+        handleDisplayImage(index);
+        handleActivateThumbnail(index)
+        
+      }
 
-  //   if ((icon.id === "left") === l) {
-  //     thumbnailsCarousel.scroll({
-  //       top: 0,
-  //       left: -78.75,
-  //       behavior: "smooth",
-  //     });
-  //   } else if ((icon.id === "right", index === l)) {
-  //     thumbnailsCarousel.scroll({
-  //       top: 0,
-  //       left: 78.75,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // }
+    ))
+    
+  }
+
+  function handleDisplayGallery(galleryType){
+    
+      body.classList.add("disable-scroll");
+      galleryType.classList.add("display-gallery");
+      navDesktop.classList.add("nav-transition");
+      
+  }
 
   function handleDisplayImage(currentIndex) {
     images.forEach((image, index) => {
       if (currentIndex === index) {
         image.classList.add("show-image"), handleActivateThumbnail(index);
+       
       } else {
         image.classList.remove("show-image");
       }
@@ -208,19 +215,15 @@ window.onload = function () {
     })
   );
 
-  arrowIcons.forEach((icon) => {
-    icon.addEventListener("click", () => handleArrowAction(icon));
-  });
-
   document.addEventListener("click", (e) => {
     if (
       (e.target.classList.contains("gallery") && body.classList.contains("disable-scroll")) ||
       body.classList.contains("carousel")
     ) {
       galleries.forEach((gallery) => gallery.classList.remove("display-gallery"));
-      // gallery.classList.remove("display-gallery");
       body.classList.remove("disable-scroll");
       navDesktop.classList.remove("nav-transition");
+      index=0;
     }
   });
 
@@ -241,3 +244,27 @@ window.onload = function () {
   hiddenElementsRight.forEach((el) => observer.observe(el));
   hiddenVanishedElements.forEach((el) => observer.observe(el));
 };
+
+
+
+
+
+
+
+  // function handleSwipeThumbnails(icon, index) {
+  //   l = 2;
+
+  //   if ((icon.id === "left") === l) {
+  //     thumbnailsCarousel.scroll({
+  //       top: 0,
+  //       left: -78.75,
+  //       behavior: "smooth",
+  //     });
+  //   } else if ((icon.id === "right", index === l)) {
+  //     thumbnailsCarousel.scroll({
+  //       top: 0,
+  //       left: 78.75,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // }
