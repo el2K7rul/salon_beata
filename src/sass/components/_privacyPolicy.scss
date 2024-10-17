@@ -1,0 +1,32 @@
+.privacy-policy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5rem;
+
+  &__main-list {
+    margin-left: 3rem;
+  }
+
+  &__uolist {
+    margin-left: 3rem;
+    padding: 1.3rem;
+  }
+
+  &__header {
+    padding: 2rem;
+  }
+  &__intro {
+    padding: 1.5rem;
+  }
+  &__subtitle {
+    padding: 2rem 0;
+  }
+  &__sublist {
+    margin-left: 3rem;
+    padding: 1rem;
+  }
+}

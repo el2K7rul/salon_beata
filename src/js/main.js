@@ -113,7 +113,8 @@ window.onload = function () {
 
   // ------------- GALLERY -----------------------------------
 
-  const carousel = document.querySelector(".carousel");
+  const carousels = document.querySelectorAll(".carousel");
+  const thumbnailsCarousels = document.querySelectorAll(".carousel-thumbnails");
   const workBtns = document.querySelectorAll(".work-btn");
 
   const arrowIcons = document.querySelectorAll(".arrow");
@@ -126,8 +127,8 @@ window.onload = function () {
   const images = document.querySelectorAll(".img");
   const thumbnailImages = document.querySelectorAll(".thumbnail-img");
 
-  
-console.log(images);
+  console.log(carousels);
+// console.log(images);
   function handleWorkBtn(btn) {
     
     if (btn.id === "btn-one") {
@@ -150,7 +151,8 @@ console.log(images);
       handleArrowAction(startIndex, endIndex);
       
     } else if(btn.id === 'btn-four') {
-      
+      let startIndex=12;
+      let endIndex=15;
       handleDisplayGallery(styleGallery)
       handleArrowAction(startIndex, endIndex);
     }
@@ -180,7 +182,8 @@ console.log(images);
   }
 
   function handleDisplayGallery(galleryType){
-    
+      carousels.forEach((carousel) => carousel.firstElementChild.classList.add('show-image'));
+      thumbnailsCarousels.forEach((carousel) => carousel.firstElementChild.classList.remove('thumbnail-disabled'))
       body.classList.add("disable-scroll");
       galleryType.classList.add("display-gallery");
       navDesktop.classList.add("nav-transition");
@@ -224,6 +227,9 @@ console.log(images);
       body.classList.remove("disable-scroll");
       navDesktop.classList.remove("nav-transition");
       index=0;
+      
+      carousels.forEach((carousel) => carousel.firstElementChild.classList.add('show-image'));
+      
     }
   });
 
