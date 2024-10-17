@@ -15,7 +15,7 @@
   &__bottom {
     grid-row: 4 / 5;
     grid-column: 3 / 11;
-    padding-top: 1rem;
+    padding: 2rem;
     border-top: 1px solid c.$gold-dark;
     text-align: center;
   }
@@ -97,12 +97,6 @@
     }
   }
 }
-
-// @media (576px < width) {
-//   .footer {
-//     height: 45%;
-//   }
-// }
 
 @media (width <= 576px) {
   .footer {

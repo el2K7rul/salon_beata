@@ -206,6 +206,8 @@
         background: none;
         letter-spacing: 0.25rem;
         transition: scale 0.3s;
+        text-decoration: none;
+        cursor: pointer;
 
         &::before {
           position: absolute;
@@ -214,6 +216,8 @@
           content: "";
           width: 100%;
           height: 100%;
+          text-decoration: none;
+          color: inherit;
           border: 1px solid c.$link-hover-light;
           border-radius: 5%;
           opacity: 0;
@@ -237,6 +241,7 @@
     &__links {
       display: flex;
       flex-direction: column;
+
       &--link {
         color: c.$text-basic-light;
         font-size: 2.5rem;
@@ -286,35 +291,38 @@
     z-index: 10;
     transition: top 0.5s;
     &__book {
-      position: relative;
-      transition: scale 0.3s, color 0.3s;
-      cursor: pointer;
-
       &--btn {
+        position: relative;
         font-size: 1.75rem;
         padding: 1rem;
         color: c.$text-basic-light;
         border: none;
         background: none;
         letter-spacing: 0.25rem;
-      }
-      &:hover {
-        scale: 1.05;
+        transition: scale 0.3s;
+        text-decoration: none;
+        cursor: pointer;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "";
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: inherit;
+          border: 1px solid c.$link-hover-light;
+          border-radius: 5%;
+          opacity: 0;
+        }
+        &:hover::before {
+          animation: pulse 1s;
+        }
       }
 
-      &::before {
-        position: absolute;
-        top: 0;
-        right: 0;
-        content: "";
-        width: 100%;
-        height: 100%;
-        border: 1px solid c.$text-basic-light;
-        border-radius: 5%;
-        opacity: 0;
-      }
-      &:hover::before {
-        animation: pulse 1s;
+      &--btn:hover {
+        scale: 1.05;
       }
     }
 
