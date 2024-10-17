@@ -115,13 +115,12 @@
 
 @media (1000px < width< 1200px) {
   .carousel-wrapper {
-    width: 80rem;
+    // width: 80rem;
     height: 45rem;
     .img {
       width: 30rem;
     }
   }
-
 }
 
 @media (width < 576px) {
