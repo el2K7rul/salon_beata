@@ -142,25 +142,25 @@
   }
 
   .one {
-    background-image: url("/dist/img/haircut4.jpg");
+    background-image: url("/dist/img/haircut.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   .two {
-    background-image: url("/dist/img/stockcake/hair_colorization3_best.jpg");
+    background-image: url("/dist/img/hair_colorization.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   .three {
-    background-image: url("/dist/img/stockcake/shaving_brush_set.jpg");
+    background-image: url("/dist/img/shaving_brush_set.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   .four {
-    background-image: url("/dist/img/stockcake/hair_styling_pic.jpg");
+    background-image: url("/dist/img/hair_styling.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -446,15 +446,13 @@
   }
 }
 
-@media (width < 370px){
-  .price-list{
-    &__container{
+@media (width < 370px) {
+  .price-list {
+    &__container {
       margin: 2rem;
     }
-    &__box{
+    &__box {
       padding-left: 0;
     }
   }
-  
-  
 }
