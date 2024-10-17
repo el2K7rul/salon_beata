@@ -39,14 +39,14 @@
     width: 100%;
     padding: 5rem;
     filter: none;
-    z-index: 20;
+    z-index: 1;
 
     &--heading {
       font-size: 4rem;
       letter-spacing: 1.3rem;
       padding-bottom: 2rem;
       font-family: "Oswald", sans-serif;
-      z-index: inherit;
+      z-index: 1;
     }
 
     &--subheading {
