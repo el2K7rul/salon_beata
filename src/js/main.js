@@ -286,21 +286,3 @@ window.onload = function () {
   hiddenElementsRight.forEach((el) => observer.observe(el));
   hiddenVanishedElements.forEach((el) => observer.observe(el));
 };
-
-// function handleSwipeThumbnails(icon, index) {
-//   l = 2;
-
-//   if ((icon.id === "left") === l) {
-//     thumbnailsCarousel.scroll({
-//       top: 0,
-//       left: -78.75,
-//       behavior: "smooth",
-//     });
-//   } else if ((icon.id === "right", index === l)) {
-//     thumbnailsCarousel.scroll({
-//       top: 0,
-//       left: 78.75,
-//       behavior: "smooth",
-//     });
-//   }
-// }
