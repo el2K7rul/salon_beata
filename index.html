@@ -4,14 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet"
+  />
 
-  <link rel="stylesheet" type="text/css" href="./dist/css/main.min.css" />
+  <link rel="stylesheet" type="text/css" href="../dist/css/main.min.css" />
   <title>Salon Beata</title>
 </head>
 
@@ -217,6 +225,26 @@
   </div>
 </div>
 
+    <div id="cookie-box" class="cookie-box">
+  <header class="cookie-box__header">
+    <h2>SalonBeata.eu prosi o zgodę na wykorzystanie Twoich danych osobowych</h2>
+  </header>
+  <p class="cookie-box__text">
+    Pliki cookies i pokrewne im technologie pomagają nam w świadczeniu naszych usług – zapewniają
+    poprawne działanie strony i pomagają nam dostosować ofertę do Państwa potrzeb. Klikając w
+    dowolnym momencie przycisk "Akceptuję", wyrażają Państwo zgodę na to, aby Wioslujcie.pl i firmy
+    trzecie używały plików cookies do optymalizacji strony internetowej, tworzenia profili
+    użytkowników i wyświetlania reklam opartych na zainteresowaniach. Odmowa („Odrzucam”) nie
+    aktywuje zastosowanych technologii, z wyjątkiem tych, które są niezbędne do funkcjonowania
+    strony. Opcje konfiguracyjne i dalsze informacje uzyskają Państwo po kliknięciu przycisku
+    "Więcej". W tej sekcji można również w każdej chwili cofnąć udzielone wcześniej zgody.
+  </p>
+  <div class="cookie-box__buttons">
+    <button class="cookie-box__buttons--accept">Akceptuj</button>
+    <button class="cookie-box__buttons--reject">Odrzuć</button>
+  </div>
+</div>
+
     <div class="big-container">
       <header class="header section white-section">
   <div class="rect-main">
@@ -390,18 +418,28 @@
         <label for="tel" class="form__box--label">Telefon</label>
       </div>
 
-      <dic class="form__box">
-        <input type="email" id="email" name="email" class="email" placeholder="" />
-        <label for="mail" class="form__box--label"> e-mail </label>
-      </dic>
+      <div class="form__box">
+        <input type="email" id="email" name="email" class="email" required />
+        <label for="email" class="form__box--label"> e-mail </label>
+      </div>
+
       <p class="error-msg-tel"></p>
       <p class="error-msg"></p>
+      <p class="msg-status">xxx</p>
     </div>
     <div class="message">
       <label for="msg" class="message__textarea--label">Wiadomość:</label>
-      <textarea name="msg" id="msg" class="message__textarea"></textarea>
-      <button class="message__btn submit">Wyślij</button>
+      <textarea name="msg" id="msg" class="message__textarea" required></textarea>
     </div>
+    <div class="policy-box">
+      <input type="checkbox" id="terms" name="terms" required />
+      <label for="terms" class="policy-box__label"
+        >Zapoznałem się z
+        <a href="privacypolicy.html" class="policy-box__link">polityką prywatności</a>
+        serwisu</label
+      >
+    </div>
+    <button class="message__btn submit" type="submit">Wyślij</button>
   </form>
 </section>
 
@@ -464,6 +502,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./dist/js/main.min.js"></script>
+    <script src="../dist/js/main.min.js"></script>
   </body>
 </html>

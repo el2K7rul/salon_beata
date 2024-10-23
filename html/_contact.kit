@@ -44,18 +44,28 @@
         <label for="tel" class="form__box--label">Telefon</label>
       </div>
 
-      <dic class="form__box">
-        <input type="email" id="email" name="email" class="email" placeholder="" />
-        <label for="mail" class="form__box--label"> e-mail </label>
-      </dic>
+      <div class="form__box">
+        <input type="email" id="email" name="email" class="email" required />
+        <label for="email" class="form__box--label"> e-mail </label>
+      </div>
+
       <p class="error-msg-tel"></p>
       <p class="error-msg"></p>
+      <p class="msg-status">xxx</p>
     </div>
     <div class="message">
       <label for="msg" class="message__textarea--label">Wiadomość:</label>
-      <textarea name="msg" id="msg" class="message__textarea"></textarea>
-      <button class="message__btn submit">Wyślij</button>
+      <textarea name="msg" id="msg" class="message__textarea" required></textarea>
     </div>
+    <div class="policy-box">
+      <input type="checkbox" id="terms" name="terms" required />
+      <label for="terms" class="policy-box__label"
+        >Zapoznałem się z
+        <a href="privacypolicy.html" class="policy-box__link">polityką prywatności</a>
+        serwisu</label
+      >
+    </div>
+    <button class="message__btn submit" type="submit">Wyślij</button>
   </form>
 </section>
 

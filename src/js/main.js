@@ -16,6 +16,53 @@ window.onload = function () {
   const telNum = document.querySelector(".telNum");
   const submitBtn = document.querySelector(".submit");
 
+  const msgStatus = document.querySelector(".msg-status");
+
+  //cookieAlert
+
+  const consentBox = document.getElementById("cookie-box");
+  const acceptBtn = document.querySelector(".cookie-box__buttons--accept");
+  const rejectBtn = document.querySelector(".cookie-box__buttons--reject");
+
+  acceptBtn.onclick = () => {
+    document.cookie = "CookieBy=salonbeata.eu; max-age=" + 60 * 60 * 24;
+    if (document.cookie) {
+      consentBox.classList.add("hide");
+    } else {
+      alert(
+        "Cookie can't be set! Please" +
+          " unblock this site from the cookie" +
+          " setting of your browser."
+      );
+    }
+  };
+
+  rejectBtn.onclick = () => {
+    alert("Cookies rejected. Some functionality may be limited.");
+    consentBox.classList.add("hide");
+  };
+
+  let checkCookie = document.cookie.indexOf("CookieBy=GeeksForGeeks");
+  checkCookie !== -1 ? consentBox.classList.add("hide") : consentBox.classList.remove("hide");
+
+  //send mail
+
+  if (document.location.search === "?mail_status=sent") {
+    msgStatus.classList.add("succes");
+    msgStatus.textContent = "Wiadomość wysłana!";
+  }
+  setTimeout(() => {
+    msgStatus.classList.remove("succes");
+  }, 3000);
+
+  if (document.location.search === "?mail_status=error") {
+    msgStatus.classList.add("error");
+    msgStatus.textContent = "błąd, spróbuj ponownie";
+  }
+  setTimeout(() => {
+    msgStatus.classList.remove("error");
+  }, 3000);
+
   // footer
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
@@ -127,41 +174,34 @@ window.onload = function () {
   const images = document.querySelectorAll(".img");
   const thumbnailImages = document.querySelectorAll(".thumbnail-img");
 
-  console.log(carousels);
-// console.log(images);
   function handleWorkBtn(btn) {
-    
     if (btn.id === "btn-one") {
-      let startIndex=0;
-      let endIndex=3;
-      
-      handleDisplayGallery(haircutGallery),
-      handleArrowAction(startIndex, endIndex);
-      
+      let startIndex = 0;
+      let endIndex = 3;
+
+      handleDisplayGallery(haircutGallery), handleArrowAction(startIndex, endIndex);
     } else if (btn.id === "btn-two") {
-      let startIndex=4;
-      let endIndex=7;
-      handleDisplayGallery(colorGallery)
+      let startIndex = 4;
+      let endIndex = 7;
+      handleDisplayGallery(colorGallery);
       handleArrowAction(startIndex, endIndex);
-      
     } else if (btn.id === "btn-three") {
-      let startIndex=8;
-      let endIndex=11;
-      handleDisplayGallery(barberGallery)
+      let startIndex = 8;
+      let endIndex = 11;
+      handleDisplayGallery(barberGallery);
       handleArrowAction(startIndex, endIndex);
-      
-    } else if(btn.id === 'btn-four') {
-      let startIndex=12;
-      let endIndex=15;
-      handleDisplayGallery(styleGallery)
+    } else if (btn.id === "btn-four") {
+      let startIndex = 12;
+      let endIndex = 15;
+      handleDisplayGallery(styleGallery);
       handleArrowAction(startIndex, endIndex);
     }
   }
 
   function handleArrowAction(startIndex, endIndex) {
     let index = startIndex;
-    arrowIcons.forEach((icon) => icon.addEventListener('click', 
-      ()=> {
+    arrowIcons.forEach((icon) =>
+      icon.addEventListener("click", () => {
         if (icon.id === "left" && index === startIndex) {
           index = endIndex + 1;
           index--;
@@ -173,28 +213,25 @@ window.onload = function () {
           index = startIndex;
         }
         handleDisplayImage(index);
-        handleActivateThumbnail(index)
-        
-      }
-
-    ))
-    
+        handleActivateThumbnail(index);
+      })
+    );
   }
 
-  function handleDisplayGallery(galleryType){
-      carousels.forEach((carousel) => carousel.firstElementChild.classList.add('show-image'));
-      thumbnailsCarousels.forEach((carousel) => carousel.firstElementChild.classList.remove('thumbnail-disabled'))
-      body.classList.add("disable-scroll");
-      galleryType.classList.add("display-gallery");
-      navDesktop.classList.add("nav-transition");
-      
+  function handleDisplayGallery(galleryType) {
+    carousels.forEach((carousel) => carousel.firstElementChild.classList.add("show-image"));
+    thumbnailsCarousels.forEach((carousel) =>
+      carousel.firstElementChild.classList.remove("thumbnail-disabled")
+    );
+    body.classList.add("disable-scroll");
+    galleryType.classList.add("display-gallery");
+    navDesktop.classList.add("nav-transition");
   }
 
   function handleDisplayImage(currentIndex) {
     images.forEach((image, index) => {
       if (currentIndex === index) {
         image.classList.add("show-image"), handleActivateThumbnail(index);
-       
       } else {
         image.classList.remove("show-image");
       }
@@ -226,10 +263,9 @@ window.onload = function () {
       galleries.forEach((gallery) => gallery.classList.remove("display-gallery"));
       body.classList.remove("disable-scroll");
       navDesktop.classList.remove("nav-transition");
-      index=0;
-      
-      carousels.forEach((carousel) => carousel.firstElementChild.classList.add('show-image'));
-      
+      index = 0;
+
+      carousels.forEach((carousel) => carousel.firstElementChild.classList.add("show-image"));
     }
   });
 
@@ -251,26 +287,20 @@ window.onload = function () {
   hiddenVanishedElements.forEach((el) => observer.observe(el));
 };
 
+// function handleSwipeThumbnails(icon, index) {
+//   l = 2;
 
-
-
-
-
-
-  // function handleSwipeThumbnails(icon, index) {
-  //   l = 2;
-
-  //   if ((icon.id === "left") === l) {
-  //     thumbnailsCarousel.scroll({
-  //       top: 0,
-  //       left: -78.75,
-  //       behavior: "smooth",
-  //     });
-  //   } else if ((icon.id === "right", index === l)) {
-  //     thumbnailsCarousel.scroll({
-  //       top: 0,
-  //       left: 78.75,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // }
+//   if ((icon.id === "left") === l) {
+//     thumbnailsCarousel.scroll({
+//       top: 0,
+//       left: -78.75,
+//       behavior: "smooth",
+//     });
+//   } else if ((icon.id === "right", index === l)) {
+//     thumbnailsCarousel.scroll({
+//       top: 0,
+//       left: 78.75,
+//       behavior: "smooth",
+//     });
+//   }
+// }

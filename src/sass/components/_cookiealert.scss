@@ -1,0 +1,58 @@
+@use "../utilities/colors" as c;
+
+.cookie-box {
+  position: fixed;
+  bottom: 5rem;
+  left: 50%;
+  width: 70%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+  transform: translateX(-50%);
+
+  &__text p {
+    color: #858585;
+    margin: 10px 0 20px 0;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    &--accept,
+    &--reject {
+      padding: 12px 30px;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 5px;
+      cursor: pointer;
+      // transition: all 0.3s ease;
+    }
+
+    &--accept {
+      background: c.$black-main;
+      margin-right: 10px;
+    }
+
+    &--reject {
+      color: #111211;
+      background: transparent;
+      border: 2px solid c.$black-main;
+      text-decoration: none;
+    }
+  }
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
