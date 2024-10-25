@@ -1,6 +1,6 @@
 <?php
 
-$recaptcha_secret = "6Ld_0WsqAAAAAOdfqzsjM3y0UB_5E-oZEjrtu_XL";
+$recaptcha_secret = "secret";
 $recaptcha_response = $_POST["g-recaptcha-response"];
 
 $url = "https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response";
