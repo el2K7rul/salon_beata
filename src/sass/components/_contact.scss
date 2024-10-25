@@ -180,8 +180,7 @@
         transition: color 0.3s, background-color 0.3s, border 0.3s, font-weight 0.3s,
           letter-spacing 0.3s;
         cursor: pointer;
-        left: 50%;
-        transform: translateX(-50%);
+
         &:hover {
           letter-spacing: 0.15rem;
           color: c.$gold-light;
@@ -237,6 +236,11 @@
       &__link {
         text-decoration: none;
         color: inherit;
+        transition: color 0.2s ease-in-out;
+        font-weight: 700;
+      }
+      &__link:hover {
+        color: c.$gold-dark;
       }
     }
   }

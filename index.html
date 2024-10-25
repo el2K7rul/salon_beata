@@ -20,6 +20,7 @@
   />
 
   <link rel="stylesheet" type="text/css" href="../dist/css/main.min.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <title>Salon Beata</title>
 </head>
 
@@ -418,7 +419,9 @@
         serwisu</label
       >
     </div>
-    <button class="message__btn submit" type="submit">Wyślij</button>
+
+    <div class="g-recaptcha" data-sitekey="6Ld_0WsqAAAAAJHt-kIqN77vDvm7H8omk3tUjvPQ"></div>
+    <button class="message__btn submit" type="submit" value="send">Wyślij</button>
   </form>
 </section>
 

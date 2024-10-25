@@ -12,8 +12,9 @@ window.onload = function () {
   const allSections = document.querySelectorAll(".section");
   const errorMsg = document.querySelector(".error-msg");
   const errorMsgTel = document.querySelector(".error-msg-tel");
+
   const email = document.querySelector(".email");
-  const telNum = document.querySelector(".telNum");
+  const phone = document.querySelector(".telNum");
   const submitBtn = document.querySelector(".submit");
 
   const msgStatus = document.querySelector(".msg-status");
@@ -24,26 +25,26 @@ window.onload = function () {
   const acceptBtn = document.querySelector(".cookie-box__buttons--accept");
   const rejectBtn = document.querySelector(".cookie-box__buttons--reject");
 
-  // acceptBtn.onclick = () => {
-  //   document.cookie = "CookieBy=salonbeata.eu; max-age=" + 60 * 60 * 24;
-  //   if (document.cookie) {
-  //     consentBox.classList.add("hide");
-  //   } else {
-  //     alert(
-  //       "Cookie can't be set! Please" +
-  //         " unblock this site from the cookie" +
-  //         " setting of your browser."
-  //     );
-  //   }
-  // };
+  acceptBtn.onclick = () => {
+    document.cookie = "CookieBy=salonbeata.eu; max-age=" + 60 * 60 * 24;
+    if (document.cookie) {
+      consentBox.classList.add("hide");
+    } else {
+      alert(
+        "Cookie can't be set! Please" +
+          " unblock this site from the cookie" +
+          " setting of your browser."
+      );
+    }
+  };
 
-  // rejectBtn.onclick = () => {
-  //   alert("Cookies rejected. Some functionality may be limited.");
-  //   consentBox.classList.add("hide");
-  // };
+  rejectBtn.onclick = () => {
+    alert("Cookies rejected. Some functionality may be limited.");
+    consentBox.classList.add("hide");
+  };
 
-  // let checkCookie = document.cookie.indexOf("CookieBy=GeeksForGeeks");
-  // checkCookie !== -1 ? consentBox.classList.add("hide") : consentBox.classList.remove("hide");
+  let checkCookie = document.cookie.indexOf("CookieBy=GeeksForGeeks");
+  checkCookie !== -1 ? consentBox.classList.add("hide") : consentBox.classList.remove("hide");
 
   //send mail
 
@@ -62,6 +63,38 @@ window.onload = function () {
   setTimeout(() => {
     msgStatus.classList.remove("error");
   }, 3000);
+
+  // form validator
+
+  function checkMail(email) {
+    const validMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+    return validMail.test(email);
+  }
+  function checkPhone(phone) {
+    const validNum = /^[0-9\+]{8,13}$/;
+
+    return validPhone.test(phone);
+  }
+
+  const clearError = (el) => {
+    const formBox = el;
+    formBox.classList.remove("error-display");
+    formBox.textContent = "";
+  };
+
+  const showError = (input, msg) => {
+    const formBox = input;
+    formBox.classList.add("error-display");
+    formBox.textContent = msg;
+  };
+
+  // event listeners
+  submitBtn.addEventListener("click", () => {
+    checkMail(email);
+    checkPhone(phone);
+    () => preventDefault();
+  });
 
   // footer
   const currentDate = new Date();
@@ -117,46 +150,6 @@ window.onload = function () {
 
   window.addEventListener("scroll", handleObserver);
   burger.addEventListener("click", handleNav);
-
-  // form validator
-
-  const checkTelNum = (telNum) => {
-    const validNum = /^[0-9\+]{8,13}$/;
-
-    if (validNum.test(telNum.value)) {
-      clearError(errorMsgTel);
-    } else {
-      showError(errorMsgTel, "wpisz poprawny nr tel.");
-    }
-  };
-
-  const checkMail = (email) => {
-    const validMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
-    if (validMail.test(email.value)) {
-      clearError(errorMsg);
-    } else {
-      showError(errorMsg, "wpisz poprawny adres email.");
-    }
-  };
-  const clearError = (el) => {
-    const formBox = el;
-    formBox.classList.remove("error-display");
-    formBox.textContent = "";
-  };
-
-  const showError = (input, msg) => {
-    const formBox = input;
-    formBox.classList.add("error-display");
-    formBox.textContent = msg;
-  };
-
-  // event listeners
-  submitBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    checkMail(email);
-    checkTelNum(telNum);
-  });
 
   // ------------- GALLERY -----------------------------------
 
