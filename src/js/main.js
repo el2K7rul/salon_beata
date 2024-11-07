@@ -12,8 +12,8 @@ window.onload = function () {
   const allSections = document.querySelectorAll(".section");
   const errorMsg = document.querySelector(".error-msg");
   const errorMsgTel = document.querySelector(".error-msg-tel");
-  const email = document.querySelector(".email");
-  const phone = document.querySelector(".telNum");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("tel");
   const submitBtn = document.querySelector(".submit");
 
   const msgStatus = document.querySelector(".msg-status");
@@ -38,11 +38,11 @@ window.onload = function () {
   };
 
   rejectBtn.onclick = () => {
-    alert("Cookies rejected. Some functionality may be limited.");
+    alert("Pliki Cookies zostały odrzucone. Funkcjonalność strony może zostać ograniczona.");
     consentBox.classList.add("hide");
   };
 
-  let checkCookie = document.cookie.indexOf("CookieBy=GeeksForGeeks");
+  let checkCookie = document.cookie.indexOf("CookieBy=salonbeata.eu");
   checkCookie !== -1 ? consentBox.classList.add("hide") : consentBox.classList.remove("hide");
 
   //send mail
@@ -63,46 +63,44 @@ window.onload = function () {
     msgStatus.classList.remove("error");
   }, 3000);
 
-    // form validator
+  // form validator
 
-    const checkPhone = (phone) => {
-      const validNum = /^[0-9\+]{8,13}$/;
-  
-      if (validNum.test(telNum.value)) {
-        clearError(errorMsgTel);
-      } else {
-        showError(errorMsgTel, "wpisz poprawny nr tel.");
-      }
-    };
-  
-    const checkMail = (email) => {
-      const validMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-  
-      if (validMail.test(email.value)) {
-        clearError(errorMsg);
-      } else {
-        showError(errorMsg, "wpisz poprawny adres email.");
-      }
-    };
-    const clearError = (el) => {
-      const formBox = el;
-      formBox.classList.remove("error-display");
-      formBox.textContent = "";
-    };
-  
-    const showError = (input, msg) => {
-      const formBox = input;
-      formBox.classList.add("error-display");
-      formBox.textContent = msg;
-    };
-  
-    // event listeners
-    submitBtn.addEventListener("click", (e) => {
-   
-      checkMail(email);
-      checkPhone(phone);
-    });
-  
+  const checkPhone = (phone) => {
+    const validNum = /^[0-9\+]{8,13}$/;
+
+    if (validNum.test(phone.value)) {
+      clearError(errorMsgTel);
+    } else {
+      showError(errorMsgTel, "wpisz poprawny nr tel.");
+    }
+  };
+
+  const checkMail = (email) => {
+    const validMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+    if (validMail.test(email.value)) {
+      clearError(errorMsg);
+    } else {
+      showError(errorMsg, "wpisz poprawny adres email.");
+    }
+  };
+  const clearError = (el) => {
+    const formBox = el;
+    formBox.classList.remove("error-display");
+    formBox.textContent = "";
+  };
+
+  const showError = (input, msg) => {
+    const formBox = input;
+    formBox.classList.add("error-display");
+    formBox.textContent = msg;
+  };
+
+  // event listeners
+  submitBtn.addEventListener("click", () => {
+    checkMail(email);
+    checkPhone(phone);
+  });
 
   // footer
   const currentDate = new Date();
@@ -158,7 +156,6 @@ window.onload = function () {
 
   window.addEventListener("scroll", handleObserver);
   burger.addEventListener("click", handleNav);
-
 
   // ------------- GALLERY -----------------------------------
 

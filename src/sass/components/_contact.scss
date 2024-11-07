@@ -11,7 +11,7 @@
   padding: 5% 0 5% 0;
   color: c.$white-light;
   background-color: c.$black-main;
-  background-image: url("/img/visitcard.webp");
+  background-image: url("../../../dist/img/visitcard.webp");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -92,6 +92,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 90%;
     height: 100%;
     padding: 20% 0 20% 0;
@@ -180,8 +181,7 @@
         transition: color 0.3s, background-color 0.3s, border 0.3s, font-weight 0.3s,
           letter-spacing 0.3s;
         cursor: pointer;
-        left: 50%;
-        transform: translateX(-50%);
+
         &:hover {
           letter-spacing: 0.15rem;
           color: c.$gold-light;
@@ -237,6 +237,12 @@
       &__link {
         text-decoration: none;
         color: inherit;
+        font-weight: 700;
+        transition: color 0.2s;
+
+        &:hover {
+          color: c.$gold-dark;
+        }
       }
     }
   }
@@ -272,16 +278,5 @@
   &__map {
     width: 70%;
     border-radius: 10px;
-  }
-}
-
-@media (920px <= width) {
-  .form {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 5%;
-    height: 70rem;
-    width: 70%;
   }
 }
