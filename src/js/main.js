@@ -12,8 +12,8 @@ window.onload = function () {
   const allSections = document.querySelectorAll(".section");
   const errorMsg = document.querySelector(".error-msg");
   const errorMsgTel = document.querySelector(".error-msg-tel");
-  const email = document.getElementById("email");
-  const phone = document.getElementById("tel");
+  const email = document.querySelector(".email");
+  const phone = document.querySelector(".telNum");
   const submitBtn = document.querySelector(".submit");
 
   const msgStatus = document.querySelector(".msg-status");
@@ -38,11 +38,11 @@ window.onload = function () {
   };
 
   rejectBtn.onclick = () => {
-    alert("Pliki Cookies zostały odrzucone. Funkcjonalność strony może zostać ograniczona.");
+    alert("Cookies rejected. Some functionality may be limited.");
     consentBox.classList.add("hide");
   };
 
-  let checkCookie = document.cookie.indexOf("CookieBy=salonbeata.eu");
+  let checkCookie = document.cookie.indexOf("CookieBy=GeeksForGeeks");
   checkCookie !== -1 ? consentBox.classList.add("hide") : consentBox.classList.remove("hide");
 
   //send mail
@@ -68,7 +68,7 @@ window.onload = function () {
   const checkPhone = (phone) => {
     const validNum = /^[0-9\+]{8,13}$/;
 
-    if (validNum.test(phone.value)) {
+    if (validNum.test(telNum.value)) {
       clearError(errorMsgTel);
     } else {
       showError(errorMsgTel, "wpisz poprawny nr tel.");
@@ -97,7 +97,7 @@ window.onload = function () {
   };
 
   // event listeners
-  submitBtn.addEventListener("click", () => {
+  submitBtn.addEventListener("click", (e) => {
     checkMail(email);
     checkPhone(phone);
   });
