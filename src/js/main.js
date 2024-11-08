@@ -38,7 +38,7 @@ window.onload = function () {
   };
 
   rejectBtn.onclick = () => {
-    alert("Cookies rejected. Some functionality may be limited.");
+    alert("Pliki Cookies odrzucone. Funkcjonalność strony może zostać ograniczona.");
     consentBox.classList.add("hide");
   };
 
