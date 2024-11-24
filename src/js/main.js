@@ -68,7 +68,7 @@ window.onload = function () {
   const checkPhone = (phone) => {
     const validNum = /^[0-9\+]{8,13}$/;
 
-    if (validNum.test(telNum.value)) {
+    if (validNum.test(phone.value)) {
       clearError(errorMsgTel);
     } else {
       showError(errorMsgTel, "wpisz poprawny nr tel.");
