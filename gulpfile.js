@@ -16,11 +16,11 @@ const path = {
   html: "./html/**/*.kit",
   sass: "./src/sass/**/*.scss",
   js: "./src/js/**/*.js",
-  // img: "./src/img/*",
+  img: "./src/img/*",
   dist: "./dist",
   sassDest: "./dist/css",
   jsDest: "./dist/js",
-  // imgDest: "./dist/img/",
+  imgDest: "./dist/img/",
 };
 
 function sassCompiler(done) {
@@ -61,20 +61,21 @@ function startBrowserSync(done) {
   });
   done();
 }
+
+function convertImg(done) {
+  src(path.img, { encoding: false }).pipe(imagemin()).pipe(dest(path.imgDest));
+  done();
+}
+
 function watchForChanges(done) {
   watch("./*.html").on("change", reload);
   watch([path.html, path.sass, path.js], parallel(handleKits, sassCompiler, javaScript)).on(
     "change",
     reload
   );
-  //   watch(path.img convertImg ).on("change", reload);
+  watch(path.img, convertImg).on("change", reload);
   done();
 }
-
-// function convertImg(done) {
-//   src(path.img).pipe(imagemin()).pipe(dest(path.convertImgDest));
-//   done();
-// }
 
 const mainFunction = parallel(handleKits, sassCompiler, javaScript);
 exports.cleanStuff = cleanStuff;
