@@ -3,7 +3,7 @@
 .footer {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   border-top: 1px solid black;
   background-color: c.$white-light;
   padding-top: 8rem;
@@ -13,7 +13,7 @@
   overflow: hidden;
 
   &__bottom {
-    grid-row: 5/ 5;
+    grid-row: 4/ 4;
     grid-column: 1 / 13;
     padding: 2rem;
     text-align: center;
