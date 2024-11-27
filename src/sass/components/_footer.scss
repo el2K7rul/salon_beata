@@ -13,9 +13,10 @@
   overflow: hidden;
 
   &__bottom {
-    grid-row: 4 / 5;
-    grid-column: 5 / 11;
+    grid-row: 5/ 5;
+    grid-column: 1 / 13;
     padding: 2rem;
+    text-align: center;
     border-top: 1px solid c.$gold-dark;
     
   }
