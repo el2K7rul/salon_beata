@@ -1,23 +1,21 @@
 @use "../utilities/colors" as c;
 
-.cookie-container {
+.cookie-box {
   position: fixed;
   bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width:100%;
-  height: 100%;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  width: 85%;
+  max-width: 80rem;
+  bottom: 5rem;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
+  transform: translate(-50%);
+  z-index: 100;
   
-  .cookie-box {
-    background-color: #ffffff;
-    width: 85%;
-    max-width: 80rem;
-    bottom: 5rem;
-    padding: 40px;
-    border-radius: 15px;
-    z-index: 1000;
-
     &__header{
       padding: 10px;
     }
@@ -32,8 +30,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 20px;width: 100%;
-
+      margin-top: 20px;
+      width: 100%;
+      
       &--accept,
       &--reject {
         display: flex;
@@ -47,13 +46,18 @@
         font-size: 16px;
         border-radius: 5px;
         cursor: pointer;
+        transition: all .3s;
+        &:hover{
+          scale: 1.1;
+        }
       }
-
+      
+      
       &--accept {
         background: c.$black-main;
         margin-right: 10px;
+        
       }
-
       &--reject {
         color: c.$black-main;
         background: transparent;
@@ -65,6 +69,6 @@
   .hide {
     display: none;
   }
-}
+
 
 

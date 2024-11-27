@@ -19,15 +19,15 @@ window.onload = function () {
   const msgStatus = document.querySelector(".msg-status");
 
   //cookieAlert
-
+  const cookieContainer = document.querySelector(".cookie-container");
   const consentBox = document.querySelector(".cookie-box");
   const acceptBtn = document.querySelector(".cookie-box__buttons--accept");
   const rejectBtn = document.querySelector(".cookie-box__buttons--reject");
-
+console.log(cookieContainer);
   acceptBtn.onclick = () => {
     document.cookie = "CookieBy=salonbeata.eu; max-age=" + 60 * 60 * 24;
     if (document.cookie) {
-      consentBox.classList.add("hide");
+      consentBox.classList.add("hide")
     } else {
       alert(
         "Cookie can't be set! Please" +
