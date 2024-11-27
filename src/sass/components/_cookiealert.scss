@@ -1,20 +1,29 @@
 @use "../utilities/colors" as c;
 
 .cookie-container {
-  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width:100%;
   height: 100%;
+  z-index: 100;
   .cookie-box {
-    position: fixed;
+    background-color: #ffffff;
+    width: 85%;
+    max-width: 80rem;
     bottom: 5rem;
-    width: 70%;
-    background: #fff;
-    padding: 20px;
+    padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    z-index: 1000;
+    z-index: 100;
+
+    &__header{
+      padding: 10px;
+    }
 
     &__text p {
+      text-align-last: left;
       color: #858585;
       margin: 10px 0 20px 0;
     }
@@ -23,19 +32,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 20px;
+      margin-top: 20px;width: 100%;
 
       &--accept,
       &--reject {
+        display: flex;
+        justify-content: center;
         padding: 12px 30px;
         border: none;
         outline: none;
         color: #fff;
+        width: 10rem;
+        text-align: center;
         font-size: 16px;
-        font-weight: 500;
         border-radius: 5px;
         cursor: pointer;
-        // transition: all 0.3s ease;
       }
 
       &--accept {
@@ -44,15 +55,16 @@
       }
 
       &--reject {
-        color: #111211;
+        color: c.$black-main;
         background: transparent;
         border: 2px solid c.$black-main;
         text-decoration: none;
       }
     }
   }
-
   .hide {
     display: none;
   }
 }
+
+

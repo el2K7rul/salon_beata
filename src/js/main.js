@@ -20,7 +20,7 @@ window.onload = function () {
 
   //cookieAlert
 
-  const consentBox = document.getElementById("cookie-box");
+  const consentBox = document.querySelector(".cookie-box");
   const acceptBtn = document.querySelector(".cookie-box__buttons--accept");
   const rejectBtn = document.querySelector(".cookie-box__buttons--reject");
 
@@ -42,7 +42,7 @@ window.onload = function () {
     consentBox.classList.add("hide");
   };
 
-  let checkCookie = document.cookie.indexOf("CookieBy=GeeksForGeeks");
+  let checkCookie = document.cookie.indexOf("CookieBy=salonbeata.eu");
   checkCookie !== -1 ? consentBox.classList.add("hide") : consentBox.classList.remove("hide");
 
   //send mail

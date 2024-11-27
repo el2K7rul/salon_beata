@@ -21,8 +21,13 @@
   }
 
   .adress {
+    display: grid;
     grid-column: 3 /7;
     padding-bottom: 1rem;
+    &__header{
+      grid-column: 1 / 5;
+    }
+  
   }
   .hours {
     grid-column: 8 /12;
@@ -31,16 +36,19 @@
     grid-row: 2 / 3;
     grid-column: 3 / 8;
     padding-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
     gap: 0.5rem;
+    
     &__link {
+      grid-column: 3 / 8;
       text-decoration: none;
       color: black;
       transition: color 0.6s;
     }
     &__link:hover {
       color: c.$gold-dark;
+    }
+    &__mail-link{
+      grid-row: 2 / 3;
     }
     &__tel-link,
     &__mail-link {
@@ -96,6 +104,12 @@
       text-align: center;
       font-family: "Oswald", sans-serif;
     }
+  }
+}
+.footer-contact,
+.adres{
+  &__heading{
+    grid-column:1 / 5;
   }
 }
 
