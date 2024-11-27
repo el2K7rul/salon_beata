@@ -11,7 +11,7 @@
   padding: 5% 0 5% 0;
   color: c.$white-light;
   background-color: c.$black-main;
-  background-image: url("../../../dist/img/visitcard.webp");
+  background-image: url("../../../dist/img/visitcard.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -66,6 +66,7 @@
   }
   &__tel-link,
   &__mail-link {
+    padding: 0 0 1.5rem;
     color: c.$white-light;
     text-decoration: none;
     transition: color 0.3s;
@@ -81,6 +82,7 @@
     font-size: 3.5rem;
     color: c.$white-light;
     padding-bottom: 2rem;
+    padding-top: 1.5rem;
     transition: color 0.6s;
     z-index: 2;
     &:hover {

@@ -19,20 +19,21 @@ window.onload = function () {
   const msgStatus = document.querySelector(".msg-status");
 
   //cookieAlert
-  const cookieContainer = document.querySelector(".cookie-container");
+
   const consentBox = document.querySelector(".cookie-box");
   const acceptBtn = document.querySelector(".cookie-box__buttons--accept");
   const rejectBtn = document.querySelector(".cookie-box__buttons--reject");
-console.log(cookieContainer);
+
   acceptBtn.onclick = () => {
     document.cookie = "CookieBy=salonbeata.eu; max-age=" + 60 * 60 * 24;
-    if (document.cookie) {
-      consentBox.classList.add("hide")
+    if (!document.cookie) {
+      consentBox.classList.remove("hide")
     } else {
+      consentBox.classList.add(".hide") &&
       alert(
-        "Cookie can't be set! Please" +
-          " unblock this site from the cookie" +
-          " setting of your browser."
+        "Nie można ustawić plików cookie!" +
+          " odblokuj ustawienia plików cookie w przeglądarce" +
+          " by strona działała poprawnie."
       );
     }
   };

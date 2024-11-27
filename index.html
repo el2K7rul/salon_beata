@@ -3,17 +3,17 @@
   <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+  <meta name="description" content="Totalna metamorfoza czy cykliczny lifting? W Salonie Fryzjerskim 'Betata' znajdzeisz wszystko czego potrzebują Twoje włosy!"/>
   <link rel="stylesheet" type="text/css" href="../dist/css/main.min.css" />
   <title>Salon Beata</title>
 </head>
 
-  <button class="burger">
+  <button class="burger" value="button" aria-expanded="true" aria-label="przycisk głównego menu strony">
   <span class="burger__bars burger__bars-one"></span>
   <span class="burger__bars burger__bars-two"></span>
   <span class="burger__bars burger__bars-three"></span>
 </button>
-<button class="arrowup">
+<button class="arrowup" role="button" aria-label="powrót na górę strony">
   <a href="#" class="arrowup__link"><i class="fa-solid fa-angle-up arrow__link--icon"></i></a>
 </button>
 <nav class="nav nav-mobile">
@@ -23,8 +23,8 @@
     <a class="nav-mobile__link nav__link" href="#price-list">Cennik</a>
     <a class="nav-mobile__link nav__link" href="#contact">Kontakt</a>
 
-    <a href="#" class="nav-mobile__link"
-      ><img src="../dist/img/logo.jpg" alt="hairdresser salon logo" class="border-container__logo"
+    <a href="#" class="nav-mobile__link" aria-label="powrót na górę strony"
+      ><img src="../dist/img/logo.jpg" alt="logo salonu fryzjerskiego 'Beata'" class="border-container__logo"
     /></a>
   </div>
 </nav>
@@ -33,7 +33,7 @@
     <a href="#"
       ><img
         src="../dist/img/logowithoutbg.png"
-        alt="logo salonu"
+        alt="logo salonu fryzjerskiego 'Beata'"
         class="nav-desktop__logo--img"
     /></a>
   </div>
@@ -61,13 +61,13 @@
     <div class="carousel">
       <img
         src="../dist/img/haircut1.jpg"
-        alt="img"
+        alt="zdjęcie fryzury"
         draggable="false"
         class="img show-image"
       />
-      <img src="../dist/img/haircut2.jpg" alt="img" draggable="false" class="img" />
-      <img src="../dist/img/haircut3.jpg" alt="img" draggable="false" class="img" />
-      <img src="../dist/img/haircut4.jpg" alt="img" draggable="false" class="img" />
+      <img src="../dist/img/haircut2.jpg" alt="zdjęcie fryzury" draggable="false" class="img" />
+      <img src="../dist/img/haircut3.jpg" alt="zdjęcie fryzury" draggable="false" class="img" />
+      <img src="../dist/img/haircut4.jpg" alt="zdjęcie fryzury" draggable="false" class="img" />
     </div>
     <i id="right" class="fa-solid fa-angle-right arrow-outer arrow right-btn"></i>
   </div>
@@ -75,25 +75,25 @@
     <div class="carousel-thumbnails">
       <img
         src="../dist/img/haircut1.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie fryzury"
         draggable="false"
         class="thumbnail-img"
       />
       <img
         src="../dist/img/haircut2.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie fryzury"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
       <img
         src="../dist/img/haircut3.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie fryzury"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
       <img
         src="../dist/img/haircut4.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie fryzury"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
@@ -105,31 +105,31 @@
   <div class="carousel-wrapper">
     <i id="left" class="fa-solid fa-angle-left arrow-outer arrow left-btn"></i>
     <div class="carousel">
-      <img src="../dist/img/color1.jpg" alt="img" draggable="false" class="img show-image" />
-      <img src="../dist/img/color2.jpg" alt="img" draggable="false" class="img" />
-      <img src="../dist/img/color3.jpg" alt="img" draggable="false" class="img" />
-      <img src="../dist/img/color4.jpg" alt="img" draggable="false" class="img" />
+      <img src="../dist/img/color1.jpg" alt="zdjęcie koloryzacji" draggable="false" class="img show-image" />
+      <img src="../dist/img/color2.jpg" alt="zdjęcie koloryzacji" draggable="false" class="img" />
+      <img src="../dist/img/color3.jpg" alt="zdjęcie koloryzacji" draggable="false" class="img" />
+      <img src="../dist/img/color4.jpg" alt="zdjęcie koloryzacji" draggable="false" class="img" />
     </div>
     <i id="right" class="fa-solid fa-angle-right arrow-outer arrow right-btn"></i>
   </div>
   <div class="carousel-thumbnails-wrapper">
     <div class="carousel-thumbnails">
-      <img src="../dist/img/color1.jpg" alt="img" draggable="false" class="thumbnail-img" />
+      <img src="../dist/img/color1.jpg" alt="pomniejszone zdjęcie koloryzacji" draggable="false" class="thumbnail-img" />
       <img
         src="../dist/img/color2.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie koloryzacji"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
       <img
         src="../dist/img/color3.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie koloryzacji"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
       <img
         src="../dist/img/color4.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie koloryzacji"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
@@ -141,31 +141,31 @@
   <div class="carousel-wrapper">
     <i id="left" class="fa-solid fa-angle-left arrow-outer arrow left-btn"></i>
     <div class="carousel">
-      <img src="../dist/img/barber1.jpg" alt="img" draggable="false" class="img show-image" />
-      <img src="../dist/img/barber2.jpg" alt="img" draggable="false" class="img" />
-      <img src="../dist/img/barber3.jpg" alt="img" draggable="false" class="img" />
-      <img src="../dist/img/barber4.jpg" alt="img" draggable="false" class="img" />
+      <img src="../dist/img/barber1.jpg" alt="zdjęcie przykładu pracy barbera" draggable="false" class="img show-image" />
+      <img src="../dist/img/barber2.jpg" alt="zdjęcie przykładu pracy barbera" draggable="false" class="img" />
+      <img src="../dist/img/barber3.jpg" alt="zdjęcie przykładu pracy barbera" draggable="false" class="img" />
+      <img src="../dist/img/barber4.jpg" alt="zdjęcie przykładu pracy barbera" draggable="false" class="img" />
     </div>
     <i id="right" class="fa-solid fa-angle-right arrow-outer arrow right-btn"></i>
   </div>
   <div class="carousel-thumbnails-wrapper">
     <div class="carousel-thumbnails">
-      <img src="../dist/img/barber1.jpg" alt="img" draggable="false" class="thumbnail-img" />
+      <img src="../dist/img/barber1.jpg" alt="pomniejszone zdjęcie przykładu pracy barbera" draggable="false" class="thumbnail-img" />
       <img
         src="../dist/img/barber2.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie przykładu pracy barbera"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
       <img
         src="../dist/img/barber3.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie przykładu pracy barbera"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
       <img
         src="../dist/img/barber4.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie przykładu pracy barbera"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
@@ -176,31 +176,31 @@
   <div class="carousel-wrapper">
     <i id="left" class="fa-solid fa-angle-left arrow-outer arrow left-btn"></i>
     <div class="carousel">
-      <img src="../dist/img/style1.jpg" alt="img" draggable="false" class="img show-image" />
-      <img src="../dist/img/style2.jpg" alt="img" draggable="false" class="img" />
-      <img src="../dist/img/style3.jpg" alt="img" draggable="false" class="img" />
-      <img src="../dist/img/style4.jpg" alt="img" draggable="false" class="img" />
+      <img src="../dist/img/style1.jpg" alt="zdjęcie stylizacji" draggable="false" class="img show-image" />
+      <img src="../dist/img/style2.jpg" alt="zdjęcie stylizacji" draggable="false" class="img" />
+      <img src="../dist/img/style3.jpg" alt="zdjęcie stylizacji" draggable="false" class="img" />
+      <img src="../dist/img/style4.jpg" alt="zdjęcie stylizacji" draggable="false" class="img" />
     </div>
     <i id="right" class="fa-solid fa-angle-right arrow-outer arrow right-btn"></i>
   </div>
   <div class="carousel-thumbnails-wrapper">
     <div class="carousel-thumbnails">
-      <img src="../dist/img/style1.jpg" alt="img" draggable="false" class="thumbnail-img" />
+      <img src="../dist/img/style1.jpg" alt="pomniejszone zdjęcie stylizacji" draggable="false" class="thumbnail-img" />
       <img
         src="../dist/img/style2.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie stylizacji"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
       <img
         src="../dist/img/style3.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie stylizacji"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
       <img
         src="../dist/img/style4.jpg"
-        alt="img"
+        alt="pomniejszone zdjęcie stylizacji"
         draggable="false"
         class="thumbnail-img thumbnail-disabled"
       />
@@ -208,8 +208,7 @@
   </div>
 </div>
 
-  <div class="cookie-container">
-  <div class="cookie-box">
+    <div class="cookie-box hide">
     <header class="cookie-box__header">
       <h2>Cenimy prywatność użytkowników</h2>
     </header>
@@ -224,7 +223,6 @@
       <button class="cookie-box__buttons--reject">Odrzuć</button>
     </div>
   </div>
-</div>
 
   <body class="body">
     <div class="big-container">
@@ -237,7 +235,7 @@
       </div>
       <h1 class="text">Beata</h1>
       <div class="logo">
-        <img src="../dist/img/logo.jpg" alt="logo" class="logo__img">
+        <img src="../dist/img/logo.jpg" alt="logo salonu fryzjerskiego 'Beata'" class="logo__img">
       </div>
   </div>
 </header>
@@ -258,7 +256,7 @@
   </section>
   <section id='how' class="how section">
     <div class="how__text">
-      <h1 class="how__text--heading hidden-right"><span>W</span> czym możemy pomóc?</h1>
+      <h2 class="how__text--heading hidden-right"><span>W</span> czym możemy pomóc?</h2>
       <p class="how__text--content hidden-right">
         Bez względu czy przychodzisz po cykliczny lifting czy totalną metamorfozę, chętnie pomożemy!
         Każde spotkanie zaczynamy od rozmowy. Rozmowy, która pomoże ustalić jakie są Twoje oczekiwania. 
@@ -272,7 +270,7 @@
   </section>
   <section id="offer" class="offer-cards ">
     <div class="offer-cards__text">
-      <h1 class="offer-cards__text--heading hidden"><span>C</span>o możemy zaproponować?</h1>
+      <h2 class="offer-cards__text--heading hidden"><span>C</span>o możemy zaproponować?</h2>
       <p class="offer-cards__text--content hidden">
         Naszą ofertę opieramy o trzy główne filary sztuki fryzjerstwa: Strzyżenie, koloryzacja, stylizacja. Dla naszych Panów oferujemy również usługi barberskie. 
       </p>
@@ -318,7 +316,7 @@
 
   <section id="price-list" class="price-list ">
     <div class="price-list__heading-box section">
-      <h1 class="price-list__heading">Cennik</h1>
+      <h2 class="price-list__heading">Cennik</h2>
     </div>
     <div class="price-list__container section white-section  ">
       <div class="price-list__box">
@@ -433,6 +431,7 @@
     style="border: 0"
     allowfullscreen=""
     loading="lazy"
+    title="lokalizacja salonu fryzjerskiego Beata na mapie google"
     referrerpolicy="no-referrer-when-downgrade"
     class="location__map"
   ></iframe>
@@ -463,14 +462,14 @@
   <div class="media xs">
     <div class="media__facebook">
       <h1 class="media__heading">Media</h1>
-      <a href="https://www.facebook.com/beata.nieciecka.9" target="_blank"
+      <a href="https://www.facebook.com/beata.nieciecka.9" target="_blank" aria-label="przejdź do strony salonu fryzjerskiego 'Beata' w serwisie Facebook.com"
         ><i class="fa-brands fa-facebook"> </i
       ></a>
     </div>
   </div>
   <div class="privacy-policy xs">
     <h1 class="privacy-policy__heading">
-      <a target="_black" href="privacypolicy.html">Polityka prywatności</a>
+      <a target="_black" href="privacypolicy.html" aria-label="otwórz stronę z omówieniem polityki prywatności">Polityka prywatności</a>
     </h1>
   </div>
   <div class="footer__bottom">

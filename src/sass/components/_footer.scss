@@ -57,6 +57,7 @@
     }
     &__tel-link,
     &__mail-link {
+      padding:0 0 1.5rem;
       font-size: 1.5rem;
       color: black;
       text-decoration: none;
@@ -89,7 +90,7 @@
     
     i {
 
-      padding: 0;
+      padding-top: 2rem;
       color: black;
       transition: color 0.6s;
     }
@@ -100,12 +101,21 @@
       text-align: center;
     }
   }
+  .hours{
+    &__header{
+      padding-bottom: 1.5rem;
+    }
+    &__content{
+      padding-bottom: 1rem;
+    }
 
+  }
   .adress,
   .hours,
   .footer-contact,
   .media,
   .privacy-policy {
+    
     &__heading {
       font-size: 2rem;
       letter-spacing: 0.6rem;
